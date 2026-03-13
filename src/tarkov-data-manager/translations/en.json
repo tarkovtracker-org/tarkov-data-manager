@@ -243,5 +243,14 @@
     "ZoneSubStorage": "Storage Bunker",
     "ZoneSW00": "Zmejskij Alley Block",
     "ZoneSW01": "Zmejskij Alley Block",
-    "ZoneWoodCutter": "Lumber Mill"
+    "ZoneWoodCutter": "Lumber Mill",
+    "6740a2c17e3818d5bb0648b6 name": "Half Empty",
+    "5fd8aa3206fb3a6b8154a2c3": "Locate and neutralize Shturman with a headshot from over 40 meters away while using an M700 sniper rifle with the specified scope",
+    "5bb60cbc88a45011a8235cc5": "Survive and extract on Interchange 7 times",
+    "5c1b765d86f77413193fa4f2": "Eliminate PMC operatives using an SR-25 with Hybrid 46 suppressor and Schmidt & Bender PM II 1-8x24 scope",
+    "63a5cf262964a7488f5243d1": "Eliminate PMC operatives while using an MP5SD with PRO sight on Streets of Tarkov, Ground Zero or Interchange",
+    "64f5deac39e45b527a7c4235": "Eliminate PMC operatives while using an AK-12 with the proprietary suppressor and PS-320 scope on Lighthouse, Customs, or Reserve",
+    "6574e0dedc0d635f633a5807": "Eliminate any targets while using an RPDN with EKP-1S-03 sight on Shoreline, Interchange or Woods",
+    "66a0f5a7f9eae6761253114c": "Eliminate any targets while using an SR-2M with suppressor and KP-SR2 sight on Factory",
+    "collector-missing-items-1": "Hand over the found in raid Collector items"
 }

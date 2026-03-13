@@ -1299,6 +1299,14 @@ class UpdateQuestsJob extends DataJob {
             const handleRewardsChanged = (rewardsChanged, rewardsTarget) => {
                 for (const rewardType in rewardsChanged) {
                     if (rewardType === 'items') {
+                        if (Array.isArray(rewardsChanged[rewardType])) {
+                            rewardsTarget[rewardType] = rewardsChanged[rewardType].map(reward => ({
+                                ...reward,
+                                contains: reward.contains ?? [],
+                                attributes: reward.attributes ?? [],
+                            }));
+                            continue;
+                        }
                         for (const itemId in rewardsChanged[rewardType]) {
                             const itemReward = rewardsTarget[rewardType].find(r => r.item === itemId);
                             if (!itemReward) {
