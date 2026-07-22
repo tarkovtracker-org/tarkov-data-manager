@@ -6,7 +6,7 @@ import remoteData from '../modules/remote-data.mjs';
 import tarkovData from '../modules/tarkov-data.mjs';
 import { getLocalBucketContents } from '../modules/upload-s3.mjs';
 import presetData from '../modules/preset-data.mjs';
-import webSocketServer from '../modules/websocket-server.mjs';
+import tarkovDevData from '../modules/tarkov-data-tarkov-dev.mjs';
 import { createAndUploadFromSource } from '../modules/image-create.mjs';
 
 class UpdateQuestsJob extends DataJob {
@@ -67,10 +67,10 @@ class UpdateQuestsJob extends DataJob {
             tarkovData.customization(),
             tarkovData.prestige(),
         ]);
-        this.maps = await this.jobManager.jobOutput('update-maps', this);
-        this.hideout = await this.jobManager.jobOutput('update-hideout', this);
-        this.traders = (await this.jobManager.jobOutput('update-traders', this));
-        this.itemMap = await this.jobManager.jobOutput('update-item-cache', this);
+        this.maps = await this.jobOutput('update-maps');
+        this.hideout = await this.jobOutput('update-hideout');
+        this.traders = (await this.jobOutput('update-traders'));
+        this.itemMap = await this.jobOutput('update-item-cache');
         this.presets = remoteData.getPresets();
 
         // only keep details for active maps
@@ -230,7 +230,6 @@ class UpdateQuestsJob extends DataJob {
                                         if (notWearing.some(i => i.id === id)) {
                                             continue;
                                         }
-                                        console.log(id, this.itemResults.get(id));
                                         notWearing.push({
                                             id,
                                             name: this.itemResults.get(id).name,
@@ -254,7 +253,7 @@ class UpdateQuestsJob extends DataJob {
                     quests.Task.push(quest);
                 } catch (error) {
                     this.logger.error(error);
-                    this.addJobSummary(`${quest.name} ${questId}\n${error.stack}`, 'Error Adding Missing Quest');
+                    this.addJobSummary(`${this.locales.en[quest.name]} ${questId}\n${error.stack}`, 'Error Adding Missing Quest');
                 }
             }
 
@@ -402,7 +401,21 @@ class UpdateQuestsJob extends DataJob {
                 if (trader || map) {
                     wikiLinkSuffix = '_(quest)';
                 }
-                quest.wikiLink = this.getWikiLink(`${this.getTranslation(quest.name)}${wikiLinkSuffix}`);
+                const questName = this.getTranslation(quest.name);
+                if (questName === 'New Beginning') {
+                    wikiLinkSuffix = '_(Prestige_1)';
+                    if (quest.requiredPrestige) {
+                        const prestige = this.prestige.find(p => p.id === quest.requiredPrestige);
+                        if (prestige) {
+                            const prestigeName = this.locales.en[`${prestige.id} name`];
+                            if (prestigeName) {
+                                const prevPrestige = parseInt(prestigeName.split(' ')[1]);
+                                wikiLinkSuffix = `_(Prestige_${prevPrestige+1})`;
+                            }
+                        }
+                    }
+                }
+                quest.wikiLink = this.getWikiLink(`${questName}${wikiLinkSuffix}`);
 
                 quest.kappaRequired = false;
                 quest.lightkeeperRequired = false;
@@ -608,6 +621,7 @@ class UpdateQuestsJob extends DataJob {
                 kvName += `_${gameMode.name}`;
             }
             await this.cloudflarePut(quests, kvName);
+            await this.updateStaticApi(quests, gameMode.name);
 
             this.logger.success(`Finished processing ${quests.Task.length} quests`);
         }
@@ -837,9 +851,14 @@ class UpdateQuestsJob extends DataJob {
 
         if (!matchedPreset) {
             try {
-                const presetImage = await webSocketServer.getJsonImage(reward);
-                const matchedPresetData = await presetData.addJsonPreset(reward);
-                matchedPreset = matchedPresetData.preset;
+                const presetImage = await this.fenceFetchImage('/preset-image', {
+                    method: 'POST',
+                    body: JSON.stringify(reward),
+                });
+                matchedPreset = await presetData.addJsonPreset(reward);
+                this.addJobSummary(`${matchedPreset.name} ${matchedPreset.id}`, 'Created Preset');
+                this.logger.log('Created preset');
+                this.logger.log(JSON.stringify(reward, null, 4));
                 await createAndUploadFromSource(presetImage, matchedPreset.id);
             } catch (error) {
                 this.logger.error(`Error creating JSON preset: ${error.message}`);
@@ -849,6 +868,8 @@ class UpdateQuestsJob extends DataJob {
             // calling here ensures that only prior-existing presets
             // are updated instead of updating a newly-created one
             await presetData.presetUsed(matchedPreset.id);
+            this.logger.log(`Matched reward preset ${matchedPreset.name}`);
+            //this.logger.log(JSON.stringify(matchedPreset, null, 4));
         }
 
         if (matchedPreset) {
@@ -1351,6 +1372,9 @@ class UpdateQuestsJob extends DataJob {
             if (this.changedQuests[questData.id].locale) {
                 for (const langCode in this.changedQuests[questData.id].locale) {
                     for (const translationKey in this.changedQuests[questData.id].locale[langCode]) {
+                        if (questId === '68ee1c18b4e5bc9a68018cd7') {
+                            console.info(langCode, translationKey, this.changedQuests[questData.id].locale[langCode][translationKey]);
+                        }
                         this.addTranslation(translationKey, langCode, this.changedQuests[questData.id].locale[langCode][translationKey]);
                     }
                 }
@@ -1505,23 +1529,21 @@ class UpdateQuestsJob extends DataJob {
                             obj.usingWeaponMods.push(modSet);
                         }
                     }
-                    if (cond.enemyHealthEffects && cond.enemyHealthEffects.length > 0) {
+                    if (cond.enemyHealthEffects?.length) {
                         obj.enemyHealthEffect = {
                             ...cond.enemyHealthEffects[0],
                             time: null,
                         };
                         if (cond.enemyHealthEffects[0].bodyParts) {
-                            obj.bodyParts = this.addTranslation(cond.enemyHealthEffects[0].bodyParts.map(part => `QuestCondition/Elimination/Kill/BodyPart/${part}`));
-                            obj.enemyHealthEffect.bodyParts = obj.bodyParts;
+                            obj.enemyHealthEffect.bodyParts = this.addTranslation(cond.enemyHealthEffects[0].bodyParts.map(part => `QuestCondition/Elimination/Kill/BodyPart/${part}`));
                         }
                         if (cond.enemyHealthEffects[0].effects) {
-                            obj.effects = this.addTranslation(cond.enemyHealthEffects[0].effects.map(eff => {
+                            obj.enemyHealthEffect.effects = this.addTranslation(cond.enemyHealthEffects[0].effects.map(eff => {
                                 if (eff === 'Stimulator') {
                                     return '5448f3a64bdc2d60728b456a Name';
                                 }
                                 return eff;
                             }));
-                            obj.enemyHealthEffect.effects = obj.effects;
                         }
                     }
                     let targetCode = cond.target;
@@ -1651,6 +1673,7 @@ class UpdateQuestsJob extends DataJob {
             if (obj.shotType) {
                 obj.type = 'shoot';
                 obj.playerHealthEffect = obj.healthEffect;
+                delete obj.healthEffect;
             } else if (obj.exitStatus) {
                 obj.type = 'extract';
             } else if (obj.healthEffect) {
@@ -2017,7 +2040,7 @@ class UpdateQuestsJob extends DataJob {
                 if (spawn.BossName.toLowerCase() === mobName) {
                     return true;
                 }
-                if (spawn.BossEscortAmount !== '0' && spawn.BossEscortType.toLowerCase() === mobName) {
+                if (spawn.BossEscortAmount !== '0' && spawn.BossEscortType.toLowerCase() === mobName && spawn.BossName !== 'bossKnight') {
                     return true;
                 }
                 return !!spawn.Supports?.some(support => {
@@ -2175,6 +2198,204 @@ class UpdateQuestsJob extends DataJob {
             itemIds.push(item.id);
         }
         return itemIds;
+    }
+
+    async updateStaticApi(data, gameMode) {
+        const apiData = {
+            tasks: {},
+            questItems: {},
+            achievements: {},
+        };
+        const fixRewards = (rewards) => {
+            for (const rew of rewards.traderStanding) {
+                rew.trader = rew.trader_id;
+                delete rew.trader_id;
+                delete rew.name;
+            }
+            for (const rew of rewards.items) {
+                delete rew.item_name;
+                delete rew.contains;
+                delete rew.base_item_id;
+                rew.attributes = this.objectifyAttributes(rew.attributes);
+            }
+            for (const unlock of rewards.offerUnlock) {
+                unlock.trader = unlock.trader_id;
+                delete unlock.trader_id;
+                delete unlock.trader_name;
+                delete unlock.item_name;
+                delete unlock.base_item_id;
+            }
+            for (const rew of rewards.skillLevelReward) {
+                rew.skill = rew.name;
+                delete rew.name;
+            }
+            rewards.traderUnlock = rewards.traderUnlock.map(rew => rew.trader_id);
+            for (const rew of rewards.craftUnlock) {
+                rew.station = rew.station_id;
+                delete rew.station_id;
+                delete rew.station_name;
+                rew.item = rew.items[0].id;
+                rew.count = rew.items[0].count;
+                delete rew.items;
+            }
+            for (const rew of rewards.customization) {
+                delete rew.__typename;
+            }
+        };
+        const fixObjectives = (objectives) => {
+            for (const obj of objectives) {
+                obj.maps = obj.map_ids;
+                delete obj.map_ids;
+                delete obj.zoneKeys;
+                delete obj.item_name;
+                delete obj.locationNames;
+                delete obj.target;
+                delete obj.quest_name;
+                delete obj.containsOne;
+                for (const z of obj.zones ?? []) {
+                    if (obj.zoneNames?.includes(z.id)) {
+                        z.name = z.id;
+                    }
+                }
+                delete obj.zoneNames;
+                if (obj.map_ids) {
+                    obj.maps = obj.map_ids;
+                    delete obj.map_ids;
+                }
+                if (obj.skillLevel) {
+                    obj.skill = obj.skillLevel.name;
+                    obj.level = obj.skillLevel.level;
+                    delete obj.count;
+                    delete obj.skillLevel;
+                }
+                if (obj.type === 'visit') {
+                    delete obj.count;
+                }
+                if (obj.type === 'giveItem') {
+                    delete obj.zones;
+                    delete obj.maps;
+                }
+                if (obj.type === 'extract') {
+                    delete obj.zones;
+                }
+                if (obj.type === 'findQuestItem') {
+                    delete obj.zones;
+                }
+                if (obj.type === 'plantQuestItem') {
+                }
+                if (obj.type === 'giveQuestItem') {
+                    delete obj.zones;
+                    delete obj.possibleLocations;
+                }
+                if (obj.type === 'mark') {
+                    obj.markerItem = obj.item_id;
+                }
+                if (obj.type === 'buildWeapon') {
+                    obj.buildAttributes = obj.attributes.reduce((atts, att) => {
+                        atts[att.name] = att.requirement;
+                        return atts;
+                    }, {});
+                    delete obj.attributes;
+                }
+                if (obj.containsAll) {
+                    obj.containsAll = obj.containsAll.map(cont => cont.id);
+                }
+                if (obj.containsCategory) {
+                    obj.containsCategory = obj.containsCategory.map(cont => cont.id);
+                }
+                if (obj.usingWeapon) {
+                    obj.usingWeapon = obj.usingWeapon.map(weap => {
+                        return weap.id;
+                    });
+                }
+                if (obj.usingWeaponMods) {
+                    obj.usingWeaponMods = obj.usingWeaponMods.reduce((modGroups, group) => {
+                        modGroups.push(group.map(mod => mod.id));
+                        return modGroups;
+                    }, []);
+                }
+                if (obj.type === 'findQuestItem' || obj.type === 'giveQuestItem') {
+                    obj.questItem = obj.item_id;
+                }
+                if (obj.type !== 'buildWeapon') {
+                    delete obj.item;
+                }
+                if (obj.trader_id) {
+                    obj.trader = obj.trader_id;
+                    delete obj.count;
+                    delete obj.zones;
+                    delete obj.maps;
+                }
+                delete obj.trader_id;
+                delete obj.trader_name;
+                delete obj.item_id;
+            }
+        };
+        for (const task of structuredClone(data.Task)) {
+            apiData.tasks[task.id] = task;
+            delete task.traderName;
+            task.map = task.location_id;
+            delete task.location_id;
+            delete task.locationName;
+            delete task.traderLevelRequirements;
+            delete task.tarkovDataId;
+            for (const req of task.taskRequirements) {
+                delete req.name;
+            }
+            for (const req of task.traderRequirements) {
+                req.trader = req.trader_id;
+                delete req.trader_id;
+                delete req.name;
+                delete req.level;
+            }
+            fixObjectives(task.objectives);
+            fixObjectives(task.failConditions);
+            fixRewards(task.startRewards);
+            fixRewards(task.finishRewards);
+            fixRewards(task.failureOutcome);
+            for (const nk of task.neededKeys ?? []) {
+                nk.map = nk.map_id;
+                nk.keys = nk.key_ids;
+                delete nk.map_id;
+                delete nk.key_ids;
+            }
+        }
+        apiData.questItems = structuredClone(data.QuestItem);
+        for (const ach of structuredClone(data.Achievement)) {
+            apiData.achievements[ach.id] = ach;
+        }
+        apiData.prestige = structuredClone(data.Prestige);
+        for (const prestige of apiData.prestige) {
+            fixObjectives(prestige.conditions);
+            fixRewards(prestige.rewards);
+        }
+        await this.r2Put(`${gameMode}/tasks`,
+            {data: apiData, translations: [
+                '$.data.tasks.*.name',
+                '$.data.tasks.*.objectives[*].description',
+                '$.data.tasks.*.objectives[*].exitName',
+                '$.data.tasks.*.objectives[*].exitStatus[*]',
+                '$.data.tasks.*.objectives[*].zones[*].name',
+                '$.data.tasks.*.objectives[*].targetNames[*]',
+                '$.data.tasks.*.objectives[*]..bodyParts[*]',
+                "$.data.tasks.*.objectives[*]['healthEffect','playerHealthEffect','enemyHealthEffect'].effects[*]",
+                "$.data.tasks.*['startRewards','finishRewards','failureOutcome'][*].customization[*].name",
+                "$.data.tasks.*['startRewards','finishRewards','failureOutcome'][*].customization[*].customizationTypeName",
+                '$.data.questItems.*.name',
+                '$.data.questItems.*.shortName',
+                '$.data.questItems.*.description',
+                '$.data.achievements.*.name',
+                '$.data.achievements.*.description',
+                '$.data.achievements.*.side',
+                '$.data.achievements.*.rarity',
+                '$.data.prestige[*].name',
+                '$.data.prestige[*].conditions[*].description',
+                '$.data.prestige[*].transferSettings[*].name',
+                '$.data.prestige.*.rewards.customization.*.name',
+                '$.data.prestige.*.rewards.customization.*.customizationTypeName',
+            ]},
+            {locale: data.locale},
+        );
     }
 }
 

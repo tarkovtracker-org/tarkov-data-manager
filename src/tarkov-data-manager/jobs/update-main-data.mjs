@@ -1,7 +1,8 @@
 import DataJob from '../modules/data-job.mjs';
 import tarkovData from '../modules/tarkov-data.mjs';
-import webSocketServer from '../modules/websocket-server.mjs';
+import tarkovDevData from '../modules/tarkov-data-tarkov-dev.mjs';
 import gameModes from '../modules/game-modes.mjs';
+import mData from '../modules/tarkov-data-md.mjs';
 
 class UpdateMainDataJob extends DataJob {
     constructor(options) {
@@ -15,7 +16,26 @@ class UpdateMainDataJob extends DataJob {
         });
 
         const tradingService = services.find(s => s.name === 'Trading');
-        if (tradingService?.status === 1 && webSocketServer.launchedScanners().length === 0) {
+        const scannersStatus = await tarkovDevData.scannersStatus().catch(error => {
+            this.logger.error(`Error getting scanenrs status: ${error.message}`);
+            return {};
+        });
+        const launchedScanners = Object.values(scannersStatus).reduce((total, scanner) => {
+            const availableStatuses = [
+                'scanning',
+                'idle',
+                'paused'
+            ];
+            const validGameModes = [
+                'regular',
+                'pve',
+            ];
+            if (validGameModes.includes(scanner.gameMode) && availableStatuses.includes(scanner.status)) {
+                total++;
+            }
+            return total;
+        }, 0);
+        if (tradingService?.status === 1 && launchedScanners === 0) {
             this.logger.log('Game is updating, skipping data update');
             return;
         }
@@ -40,6 +60,13 @@ class UpdateMainDataJob extends DataJob {
                 return results;
             }));
         }
+        this.logger.log('Downloading languages...');
+        reqs.push(mData.locales({download: true}).then(locales => {
+            this.logger.success(`Downloaded languages: ${Object.keys(locales).join(', ')}`);
+        }).catch(error => {
+            this.logger.error(`Error downloading languages: ${error.message}`);
+            this.addJobSummary(`Error downloading languages: ${error.message}`);
+        }));
         await Promise.all(reqs);
         this.logger.timeEnd('data-download');
         return returnValue;

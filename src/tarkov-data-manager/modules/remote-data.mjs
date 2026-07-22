@@ -1,9 +1,13 @@
 import midmean from 'compute-midmean';
 
+import imgGen from 'tarkov-dev-image-generator';
+
 import normalizeName from './normalize-name.js';
 import db from './db-connection.mjs';
 import gameModes from './game-modes.mjs';
 import emitter from './emitter.mjs';
+import s3 from './upload-s3.mjs';
+import dogtags from './dogtags.mjs';
 
 const myData = new Map();
 let lastRefresh = new Date(0);
@@ -44,6 +48,31 @@ const getInterquartileMean = (validValues) => {
     // }
 
     // return Math.floor(sum / includedCount);
+};
+
+const removeItemImages = async (item) => {
+    if (!item) {
+        return;
+    }
+    if (!item.types.includes('preset')) {
+        return;
+    }
+    const files = [];
+    const s3Bucket = process.env.S3_BUCKET;
+    if (!s3Bucket) {
+        return;
+    }
+    for (const imgKey in imgGen.imageFunctions.imageSizes) {
+        const imgType = imgGen.imageFunctions.imageSizes[imgKey];
+        if (!item[imgType.field]) {
+            continue;
+        }
+        files.push(item[imgType.field].replace(`${s3Bucket}/`, ''));
+    }
+    if (!files.length) {
+        return;
+    }
+    await Promise.all(files.map(filename => s3.deleteFromBucket(filename)));
 };
 
 const methods = {
@@ -349,7 +378,7 @@ const methods = {
         myData.set(updateObject.id, currentItemData);
     },
     addType: async (id, type) => {
-        //console.log(`Adding ${type} for ${id}`);
+        console.log(`Adding ${type} for ${id}`);
         const [itemData, insertResult] = await Promise.all([
             methods.get(),
             db.query(`INSERT IGNORE INTO types (item_id, type) VALUES (?, ?)`, [id, type]),
@@ -479,16 +508,17 @@ const methods = {
         `, [...insertValues, ...updateValues]);
         //console.log('insertResult', insertResult);
         if (insertResult.affectedRows > 0) {
-            if (values.types) {
-                await methods.addTypes(values.id, values.types);
-            }
-            const currentItemData = myData.get(values.id);
+            const currentItemData = myData.get(values.id) ?? {types: []};
+            const newTypes = values.types ?? [];
+            delete values.types;
             myData.set(values.id, {
                 ...currentItemData,
                 ...values,
-                types: values.types ?? [],
                 updated: currentItemData?.updated ?? new Date(),
             });
+            if (newTypes.length) {
+                await methods.addTypes(values.id, newTypes);
+            }
             emitter.emit('itemAdded', myData.get(values.id));
         }
         return insertResult;
@@ -501,7 +531,11 @@ const methods = {
         if (!myData.has(id)) {
             return Promise.reject(new Error(`Item ${id} not found`));
         }
-        const result = await db.query('DELETE FROM item_data WHERE id = ?', [id]);
+        const [result, typesResult, imageResult] = await Promise.all([
+            db.query('DELETE FROM item_data WHERE id = ?', [id]),
+            db.query('DELETE FROM types WHERE item_id = ?', [id]),
+            removeItemImages(myData.get(id)),
+        ]);
         emitter.emit('itemRemoved', myData.get(id));
         myData.delete(id);
         return result;
@@ -517,6 +551,17 @@ const methods = {
         }
         const traderOffer = await db.query('select count(id) as num from trader_offers where item_id = ?', [id]);
         return traderOffer[0].num !== 0;
+    },
+    dogtagIds: () => {
+        const dogtagPreset = [...myData.values()].find(i => i.properties?.items?.some(i => i._tpl === dogtags.ids.bear));
+        return {
+            bear: dogtags.ids.bear,
+            usec: dogtags.ids.usec,
+            any: dogtagPreset.id,
+        };
+    },
+    isDogtag: (id) => {
+        return Object.values(methods.dogtagIds()).includes(id);
     },
     on: (event, listener) => {
         return emitter.on(event, listener);

@@ -20,7 +20,7 @@ class UpdatePresetsJob extends DataJob {
 
     run = async () => {
         this.logger.log('Updating presets');
-        [this.presets, this.items, this.credits, this.dbItems] = await Promise.all([
+        [this.gamePresets, this.items, this.credits, this.dbItems] = await Promise.all([
             presetsHelper.getGamePresets(),
             tarkovData.items(),
             tarkovData.credits(),
@@ -29,11 +29,79 @@ class UpdatePresetsJob extends DataJob {
 
         presetsHelper.init(this.items, this.credits, this.locales);
 
-        const dbPresets = await presetsHelper.getDatabasePresets();
+        this.dbPresets = await presetsHelper.getDatabasePresets();
 
-        for (const p of Object.values(dbPresets)) {
+        const mergeCounts = {};
+        const mergedPresets = [];
+        const mergePromises = [];
+        const dbPresetsArray = Object.values(this.dbPresets).sort((a, b) => {
+            return a._id - b._id;
+        });
+        for (let i = 0; i < dbPresetsArray.length; i++) {
+            const dbPreset = dbPresetsArray[i];
+            // first, merge db presets into duplicate game presets
+            for (const gamePreset of Object.values(this.gamePresets)) {
+                const gamePresetItem = this.dbItems.get(gamePreset._id);
+                if (!gamePresetItem) {
+                    continue;
+                }
+                if (!presetsHelper.itemsMatch(dbPreset._items, this.removeSoftArmor(gamePreset._items))) {
+                    continue;
+                }
+                mergeCounts[gamePreset._id] ??= 0;
+                mergeCounts[gamePreset._id]++;
+                mergedPresets.push(dbPreset._id);
+                mergePromises.push(presetsHelper.mergePreset(dbPreset._id, gamePreset._id));
+                break;
+            }
+            // next, find other duplicate presets and merge into this preset
+            // we compare working back from the end
+            for (let ii = dbPresetsArray.length - 1; ii > i; ii--) {
+                if (mergedPresets.includes(dbPreset._id)) {
+                    // this preset was already merged into another preset
+                    break;
+                }
+                const dbPresetCompare = dbPresetsArray[ii];
+                if (mergedPresets.includes(dbPresetCompare._id)) {
+                    // comparison already merged into another preset
+                    continue;
+                }
+                if (!presetsHelper.itemsMatch(dbPreset._items, dbPresetCompare._items)) {
+                    continue;
+                }
+                mergeCounts[dbPreset._id] ??= 0;
+                mergeCounts[dbPreset._id]++;
+                mergedPresets.push(dbPresetCompare._id);
+                mergePromises.push(presetsHelper.mergePreset(dbPresetCompare._id, dbPreset._id));
+            }
+        }
+        await Promise.all(mergePromises);
+        for (const id in mergeCounts) {
+            const item = this.dbItems.get(id);
+            this.addJobSummary(`${item.name} ${item.id}: ${mergeCounts[id]}`, 'Merged Identical Presets');
+        }
+
+        this.presets = {};
+
+        for (const p of (Object.values(this.gamePresets))) {
             this.presets[p._id] = p;
         }
+
+        for (const p of Object.values(this.dbPresets)) {
+            if (mergedPresets.includes(p._id)) {
+                continue;
+            }
+            /*if (!presetsHelper.isNormalPresetId(p._id)) {
+                const newId = await presetsHelper.getNextPresetId();
+                await presetsHelper.changePresetId(p._id, newId);
+                this.logger.log(`Changed preset id ${p._id} to ${newId}`);
+                this.addJobSummary(`${p._id} -> ${newId}`, 'Changed Preset Id');
+                p._id = newId;
+            }*/
+            this.presets[p._id] = p;
+        }
+
+        await this.x17PresetCheck();
 
         this.presetsData = {};
 
@@ -75,14 +143,11 @@ class UpdatePresetsJob extends DataJob {
                 return substr.toUpperCase();
             });
         };
-        this.presetsData[dogtagPresetId] = {
+        const dogtagPreset = {
             id: dogtagPresetId,
-            name: this.addTranslation('customdogtags12345678910 Name', getDogTagName),
-            shortName: this.addTranslation('customdogtags12345678910 ShortName', getDogTagName),
-            //name: getDogTagName(this.locales.en),
-            //shortName: getDogTagName(this.locales.en),
-            //description: en.templates[baseItem._id].Description,
-            normalized_name: this.normalizeName(this.getTranslation('customdogtags12345678910 Name')),
+            name: this.addTranslation(`${dogtagPresetId} Name`, getDogTagName),
+            shortName: this.addTranslation(`${dogtagPresetId} ShortName`, getDogTagName),
+            //normalized_name: this.normalizeName(this.getTranslation(`${dogtagPresetId} Name`)),
             baseId: bearTag._id,
             width: bearTag._props.Width,
             height: bearTag._props.Height,
@@ -92,36 +157,43 @@ class UpdatePresetsJob extends DataJob {
             bsgCategoryId: bearTag._parent,
             types: ['preset', 'no-flea'],
             default: false,
-            containsItems: [
-                {
-                    item: {
-                        id: bearTag._id,
-                    },
-                    count: 1
-                },
-                {
-                    item: {
-                        id: usecTag._id,
-                    },
-                    count: 1
-                }
-            ],
-            items: [
-                {
-                    _id: '000000000000000000000001',
-                    _tpl: bearTag._id,
-                },
-                {
-                    _id: '000000000000000000000002',
-                    _tpl: usecTag._id,
-                }
-            ]
+            containsItems: [],
+            items: [],
         };
+        // get the dogtag case item and add all items that can fit inside
+        const dogtagCase = this.items['5c093e3486f77430cb02e593'];
+        for (const id of dogtagCase._props.Grids[0]._props.filters[0].Filter) {
+            const tagItem = this.dbItems.get(id);
+            if (!tagItem) {
+                continue;
+            }
+            if (tagItem.types.includes('quest') || tagItem.types.includes('disabled')) {
+                continue;
+            }
+            if (dogtagPreset.items.some(i => i._tpl === id)) {
+                continue;
+            }
+            dogtagPreset.items.push({
+                _id: (dogtagPreset.items.length+1).toString().padStart(24, '0'),
+                _tpl: id,
+            });
+        }
+        dogtagPreset.containsItems = dogtagPreset.items.map(i => {
+            return {
+                item: {
+                    id: i._tpl,
+                },
+                count: 1,
+            };
+        });
+        
+        this.presetsData[dogtagPresetId] = dogtagPreset;
 
         // check for missing default presets
         for (const [id, item] of this.dbItems.entries()) {
-            if (!item.types.includes('gun') || item.types.includes('disabled'))
+            if (!item.types.includes('gun') || item.types.includes('disabled')) {
                 continue;
+            }
             
             const matchingPresets = [];
             let defaultId = false;
@@ -146,6 +218,21 @@ class UpdatePresetsJob extends DataJob {
             }
         }
 
+        // check for orphaned disabled presets
+        const removedItems = [];
+        for (const [id, item] of this.dbItems.entries()) {
+            if (!item.types.includes('preset') || !item.types.includes('disabled')) {
+                // not a preset or not disabled
+                continue;
+            }
+            if (this.presets[id]) {
+                // preset still exists
+                continue;
+            }
+            removedItems.push(remoteData.removeItem(id));
+        }
+        await Promise.all(removedItems);
+
         // add "Default" to the name of default presets to differentiate them from gun names
         for (const presetId in this.presetsData) {
             const preset = this.presetsData[presetId];
@@ -167,42 +254,53 @@ class UpdatePresetsJob extends DataJob {
                     lang = this.locales.en;
                 }
                 return lang[`${preset.baseId} ShortName`] + ' ' + lang.Default;
-            })
+            });
+        }
+
+        // set normalized names
+        for (const presetId in this.presetsData) {
+            const preset = this.presetsData[presetId];
             preset.normalized_name = this.normalizeName(this.getTranslation(preset.name));
         }
 
         // make sure normalized names are unique
-        Object.values(this.presetsData).forEach((preset, i, presets) => {
-            if (i === 0) {
-                return;
+        const presetsArray = Object.values(this.presetsData);
+        for (let i = 0; i < presetsArray.length; i++) {
+            const preset = presetsArray[i];
+            let dupes = 0;
+            for (let ii = i + 1; ii < presetsArray.length; ii++) {
+                const p = presetsArray[ii];
+                if (!p) {
+                    continue;
+                }
+                if (p.normalized_name !== preset.normalized_name) {
+                    continue;
+                }
+                dupes++;
+                p.normalized_name += `-${(dupes + 1)}`;
             }
-            const dupes = presets.filter((p, ii) => {
-                return (p.normalized_name === preset.normalized_name);
-            });
-            if (dupes.length === 1) {
-                return;
-            }
-            const position = dupes.indexOf(preset) + 1;
-            if (position === 1) {
-                return;
-            }
-            preset.normalized_name += `-${position}`;
-        });
-
+        }
+        
         const queries = [];
         const regnerateImages = [];
         for (const [id, item] of this.dbItems.entries()) {
             if (!item.types.includes('preset')) {
+                // item isn't a preset
                 continue;
             }
             const p = this.presetsData[id];
-            if (!p && !item.types.includes('disabled')) {
-                this.logger.warn(`Preset ${item.name} ${id} is no longer valid; disabling`);
-                //queries.push(presetsHelper.deletePreset(id));
-                queries.push(remoteData.addType(id, 'disabled'));
+            if (!p) {
+                // item is marked as preset, but there's no preset record for it
+                if (!item.types.includes('disabled')) {    
+                    this.logger.warn(`Preset ${item.name} ${id} is no longer valid; disabling`);
+                    //queries.push(presetsHelper.deletePreset(id));
+
+                    queries.push(remoteData.addType(id, 'disabled'));
+                }
                 continue;
             }
             if (p.armorOnly) {
+                // we don't have to regenerate images for armor presets
                 continue;
             }
             if (item.short_name !== this.getTranslation(p.shortName) || item.width !== p.width || item.height !== p.height || item.properties.backgroundColor !== p.backgroundColor) {
@@ -237,8 +335,8 @@ class UpdatePresetsJob extends DataJob {
                 },
             }).then(() => {
                 if (presetIsNewItem) {
-                    this.logger.log(`${p.name} added`);
-                    this.addJobSummary(`${p.name} ${presetId}`, 'Added Presets(s)');
+                    this.logger.log(`${this.getTranslation(p.name)} added`);
+                    this.addJobSummary(`${this.getTranslation(p.name)} ${presetId}`, 'Added Presets(s)');
                 }    
                 if (p.armorOnly) {
                     // this preset consists of only armor items
@@ -329,6 +427,48 @@ class UpdatePresetsJob extends DataJob {
         await Promise.allSettled(queries);
         presetsHelper.updatedPresets();
         return this.kvData;
+    }
+
+    removeSoftArmor(items) {
+        return items.filter(i => {
+            const tempalte = this.items[i._tpl];
+            return tempalte._parent !== '65649eb40bf0ed77b8044453';
+        });
+    }
+
+    async x17PresetCheck() {
+        const x17Id = '676176d362e0497044079f4c';
+        // find existing x-17 preset in either game or db presets
+        let x17Preset = Object.values(this.gamePresets).find(p => p._items[0]._tpl === x17Id) ??
+                        Object.values(this.dbPresets).find(p => p._items[0]._tpl === x17Id);
+        if (x17Preset) {
+            // there's already an x-17 preset
+            return;
+        }
+        // we use the SCAR-H LB preset as the base
+        x17Preset = structuredClone(this.gamePresets['6193e4a46bb904059c382295']);
+        x17Preset._id = await presetsHelper.getNextPresetId();
+        x17Preset._encyclopedia = x17Id;
+        x17Preset._name = 'X-17 Default';
+        x17Preset.appendName = 'Default';
+        x17Preset._changeWeaponName = true;
+
+        // use x-17 receiver
+        x17Preset._items[0]._tpl = x17Id;
+
+        // use 16" barrel instead of 20"
+        const barrel = x17Preset._items.find(i => i.slotId === 'mod_barrel');
+        barrel._tpl = '6183b0711cb55961fa0fdcad'; // FN SCAR-H 7.62x51 16 inch barrel
+
+        // magazine must be compatible with X-17
+        const mag = x17Preset._items.find(i => i.slotId === 'mod_magazine');
+        mag._tpl = '5a3501acc4a282000d72293a'; // AR-10 7.62x51 Magpul PMAG 20 SR-LR GEN M3 20-round magazine
+
+        // add the preset to the db
+        await presetsHelper.addJsonPreset(x17Preset);
+
+        // add the preset to the list of presets to process
+        this.presets[x17Preset._id] = x17Preset;
     }
 }
 

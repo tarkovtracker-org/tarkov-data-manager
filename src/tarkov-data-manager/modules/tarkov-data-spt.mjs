@@ -55,8 +55,30 @@ const defaultOptions = dataOptions.default;
 const merge = dataOptions.merge;
 
 const cachePath = (filename) => {
-    return path.join(import.meta.dirname, '..', 'cache', filename);   
+    const pathParts = [
+        import.meta.dirname,
+        '..',
+        'cache',
+        'spt',
+    ];
+    if (filename) {
+        pathParts.push(filename);
+    }
+    return path.join(...pathParts);   
 }
+
+const ensureCachePath = () => {
+    const path = cachePath();
+    if (fs.existsSync(path)) {
+        return;
+    }
+    fs.mkdirSync(path, { recursive: true });
+};
+
+const writeToCache = (filename, content) => {
+    ensureCachePath();
+    fs.writeFileSync(cachePath(filename), content);
+};
 
 const setBranch = async () => {
     if (branchSetPromise) {
@@ -104,7 +126,7 @@ const downloadJson = async (fileName, path, download = false, writeFile = true, 
                 returnValue = returnValue[saveElement];
             }
             if (writeFile) {
-                fs.writeFileSync(cachePath(fileName), JSON.stringify(returnValue, null, 4));
+                writeToCache(fileName, JSON.stringify(returnValue, null, 4));
             }
             return returnValue;
         }
@@ -187,7 +209,7 @@ const getFolderIndex = async (options) => {
         }
         folderIndex[fileData.name] = fileData;
     }
-    fs.writeFileSync(cachePath(`spt_${folderLabel}_index.json`), JSON.stringify(folderIndex, null, 4));
+    writeToCache(`spt_${folderLabel}_index.json`, JSON.stringify(folderIndex, null, 4));
     return folderIndex;
 };
 
@@ -277,16 +299,6 @@ const tarkovSpt = {
         }
         return tarkovSpt.locales({...options, targetFile: localeFilename}).then(locales => locales[locale]);
     },
-    localeOld: async (locale, options = defaultOptions) => {
-        let localeFilename = locale;
-        for (const sptLocale in sptLangs) {
-            if (sptLangs[sptLocale] === locale) {
-                localeFilename = sptLocale;
-                break;
-            }
-        }
-        return tarkovSpt.localesOld({...options, targetFile: localeFilename}).then(locales => locales[locale]);
-    },
     locales: async (options = defaultOptions) => {
         const localeData = await getFolderData({
             ...options,
@@ -297,23 +309,6 @@ const tarkovSpt = {
         const locales = {};
         for (const sptLocale in localeData) {
             const isoLocale = sptLangs[sptLocale];
-            if (!isoLocale) {
-                continue;
-            }
-            locales[isoLocale] = localeData[sptLocale];
-        }
-        return locales;
-    },
-    localesOld: async (options = defaultOptions) => {
-        const localeData = await getFolderData({
-            ...options,
-            folderLabel: 'locales',
-            folderPath: `contents/${sptDataPathStub}locales/global`,
-            filePrefix: 'locale_old',
-        });
-        const locales = {};
-        for (const sptLocale in localeData) {
-            const isoLocale = sptLocale !== 'en' ? sptLangs[sptLocale] : 'en';
             if (!isoLocale) {
                 continue;
             }
@@ -352,7 +347,7 @@ const tarkovSpt = {
                 locationIndex = oldLocationIndex;
             } else {
                 locationIndex = await apiRequest(`contents/${sptDataPathStub}locations/${map.Id.toLowerCase()}`, options.searchParams);
-                fs.writeFileSync(cachePath(`spt_location_${id}_index.json`), JSON.stringify(locationIndex, null, 4));
+                writeToCache(`spt_location_${id}_index.json`, JSON.stringify(locationIndex, null, 4));
             }
             const looseLootInfo = locationIndex?.find(f => f.name === 'looseLoot.json');
             if (!looseLootInfo) {

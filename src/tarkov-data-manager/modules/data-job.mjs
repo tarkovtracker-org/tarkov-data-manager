@@ -5,13 +5,13 @@ import { setMaxListeners } from 'node:events';
 import  { EmbedBuilder } from 'discord.js';
 import { DateTime } from 'luxon';
 import sharp from 'sharp';
+import { JsonStreamStringify } from 'json-stream-stringify';
 
 import cloudflare from './cloudflare.mjs';
 import TranslationHelper from './translation-helper.mjs';
 import dbConnection from'./db-connection.mjs';
 import JobLogger from './job-logger.mjs';
 import { alert, send as sendWebhook } from './webhook.mjs';
-import webSocketServer from './websocket-server.mjs';
 import tarkovData from'./tarkov-data.mjs';
 import normalizeName from './normalize-name.js';
 import gameModes from './game-modes.mjs';
@@ -144,7 +144,7 @@ class DataJob {
         try {
             if (verbose) {
                 activeJobs.add(this.name);
-                alert({
+                this.discordAlert({
                     title: `Starting ${this.name} job`,
                     message: `Running jobs: ${[...activeJobs].join(', ')}`,
                 });
@@ -153,7 +153,7 @@ class DataJob {
             returnValue = await this.running;
             if (verbose) {
                 activeJobs.delete(this.name);
-                alert({
+                this.discordAlert({
                     title: `Finished ${this.name} job`,
                     message: `Running jobs: ${[...activeJobs].join(', ')}`,
                 });
@@ -162,7 +162,7 @@ class DataJob {
             if (this.parent) {
                 if (verbose) {
                     activeJobs.delete(this.name);
-                    alert({
+                    this.discordAlert({
                         title: `Error running ${this.name} job as child of ${this.parent.name}`,
                         message: `Running jobs: ${[...activeJobs].join(', ')}`,
                     });
@@ -170,7 +170,7 @@ class DataJob {
                 throwError = error;
             } else {
                 this.logger.error(error);
-                alert({
+                this.discordAlert({
                     title: `Error running ${this.name} job`,
                     message: error.stack
                 });
@@ -224,11 +224,6 @@ class DataJob {
         if (this.name) {
             emitter.emit(`jobComplete_${this.name}`);
         }
-        if (!options?.parent) {
-            if (process.env.TEST_JOB === 'true') {
-                webSocketServer.close();
-            }
-        }
         if (throwError) {
             return Promise.reject(throwError);
         }
@@ -251,6 +246,9 @@ class DataJob {
         if (!kvName) {
             return Promise.reject(new Error('Must set kvName property before calling cloudflarePut'));
         }
+        if (Array.isArray(kvName)) {
+            kvName = kvName[0];
+        }
         data.updated = new Date();
         const nextInvocation = this.parent ? this.parent.nextInvocation : this.nextInvocation;
         if (nextInvocation) {
@@ -272,7 +270,7 @@ class DataJob {
         }
         const uploadTime = new Date() - uploadStart;
         if (response.success) {
-            this.writeDump(data, kvName);
+            await this.writeDump(data, kvName);
             this.logger.success(`Successful Cloudflare put of ${kvName} in ${uploadTime} ms (${JSON.stringify(data).length.toLocaleString()} bytes)`);
             //stellate.purge(kvName, this.logger);
         } else {
@@ -313,7 +311,7 @@ class DataJob {
             if (gameMode && gameMode !== 'regular') {
                 idKey += `_${gameMode}`;
             }
-            this.writeDump(partData, idKey);
+            await this.writeDump(partData, idKey);
             uploads.push(cloudflare.put(idKey, partData, {signal: this.abortController.signal}).catch(error => {
                 this.logger.error(JSON.stringify(error));
                 return {success: false, errors: [], messages: []};
@@ -337,22 +335,124 @@ class DataJob {
         return totalResults;
     }
 
-    writeDump = (data = false, filename = false) => {
+    r2Put = async (key, data, options = {}) => {
+        const dataString = JSON.stringify(data);
+        const publicPath = `https://${cloudflare.bucketDomain}.tarkov.dev/${key}`;
+        const response = await fetch(publicPath);
+        let freshData = true;
+        if (response.ok) {
+            const currentValue = await response.text();
+            if (dataString === currentValue) {
+                this.logger.log(`Value of ${key} has not changed; skipping upload`);
+                freshData = false;
+            }
+        }
+        const start = new Date();
+        if (freshData) {
+            await cloudflare.r2Put({
+                Key: key,
+                ContentType: 'application/json',
+                Body: dataString,
+            });
+        }
+        const uploadTime = new Date() - start;
+        let freshLocale = false;
+        if (options.locale) {
+            const localeResults = await this.putStaticApiLocale(key, options.locale);
+            freshLocale = localeResults.some(Boolean);
+        }
+        if (!options.skipPurge && (freshData || freshLocale)) {
+            await this.purgeCachePrefix(publicPath);
+        }
+        if (freshData) {
+            await this.writeDump(data, `v2/${key}`, false);
+            this.logger.success(`Successful R2 put of ${key} in ${uploadTime} ms (${dataString.length.toLocaleString()} bytes)`);
+        } else {
+            return;
+        }
+        return publicPath;
+    }
+
+    purgeCachePrefix = (urlPrefix) => {
+        return cloudflare.purgeCachePrefix(urlPrefix);
+    }
+
+    getStaticApiLocale = (locale) => {
+        const apiLocale = {};
+        for (const langCode in locale) {
+            apiLocale[langCode] = {...locale[langCode]};
+            if (langCode === 'en') {
+                continue;
+            }
+
+            for (const translationKey in locale.en) {
+                if (apiLocale[langCode][translationKey]) {
+                    continue;
+                }
+                apiLocale[langCode][translationKey] = apiLocale.en[translationKey];
+            }
+        }
+        return apiLocale;
+    }
+
+    putStaticApiLocale = async (key, locale) => {
+        const apiLocale = this.getStaticApiLocale(locale);
+        return Promise.all(Object.keys(apiLocale).map(langCode => {
+            return this.r2Put(`${key}_${langCode}`, {data: apiLocale[langCode]}, {skipPurge: true});
+        }));
+    }
+
+    objectifyAttributes = (attrArray = []) => {
+        if (!Array.isArray(attrArray)) {
+            return attrArray;
+        }
+        const atts = {};
+        for (const attr of attrArray) {
+            atts[attr.type ?? attr.name] = attr.value ?? attr.stringValue;
+            if (['true', 'false'].includes(attr.value)) {
+                atts[attr.type] = JSON.parse(attr.value);
+            }
+        }
+        return atts;
+    }
+
+    writeDump = (data = false, filename = false, saveOld = true) => {
         if (!data) {
             data = this.kvData;
         }
         if (!filename) {
             filename = this.kvName;
+            if (Array.isArray(filename)) {
+                filename = filename[0];
+            }
         }
-        const newName = path.join(import.meta.dirname, '..', 'dumps', `${filename.toLowerCase()}.json`);
+        const newName = path.join(import.meta.dirname, '..', this.writeFolder, `${filename.toLowerCase()}.json`);
         const oldName = newName.replace('.json', '_old.json');
+        const folderName = path.dirname(newName);
         try {
-            fs.renameSync(newName, oldName);
-        } catch (error) {
-            // do nothing
+            fs.mkdirSync(folderName, { recursive: true });
+        } catch {}
+        if (saveOld) {
+            try {
+                fs.renameSync(newName, oldName);
+            } catch (error) {
+                // do nothing
+            }
         }
-        fs.writeFileSync(newName, JSON.stringify(data, null, 4));
-        //fs.writeFileSync(newName, value);
+        if (process.env.NODE_ENV !== 'production') {
+            fs.writeFileSync(newName, JSON.stringify(data, null, 4));
+            return Promise.resolve();
+        }
+        return new Promise((resolve, reject) => {
+            try {
+                const writeStream = fs.createWriteStream(newName);
+                new JsonStreamStringify(data).pipe(writeStream);
+                writeStream.on('finish', resolve);
+                writeStream.on('error', reject);
+            } catch (error) {
+                reject(error);
+            }
+        });
     }
 
     discordAlert = async (options) => {
@@ -379,6 +479,10 @@ class DataJob {
 
     getTranslation = (key, langCode = 'en', target) => {
         return this.translationHelper.getTranslation(key, langCode, target);
+    }
+
+    peekTranslation = (key, langCode = 'en') => {
+        return this.translationHelper.peekTranslation(key, langCode);
     }
 
     fillTranslations = async (target) => {
@@ -443,16 +547,8 @@ class DataJob {
     }
 
     jobOutput = (jobName, options = {}) => {
-        const defaultOptions = {
-            gameMode: 'regular',
-            rawOutput: false,
-        };
-        options = {
-            ...defaultOptions,
-            ...options,
-            parentJob: this,
-        };
-        return this.jobManager.jobOutput(jobName, options.parentJob, options.gameMode, options.rawOutput);
+        options.parent = this;
+        return this.jobManager.jobOutput(jobName, options);
     }
 
     addJobSummary = (text, category = 'general') => {
@@ -476,7 +572,32 @@ class DataJob {
 
     getWikiLink = (pageName) => {
         pageName = pageName.replace(/ \[\w+ ZONE\]$/, '');
+        pageName = pageName.replace(/^\//, ''); // remove leading forward slash
         return `https://escapefromtarkov.fandom.com/wiki/${encodeURIComponent(pageName.replaceAll(' ', '_').replaceAll('#', ''))}`;
+    }
+
+    async getWikiApiPage (pageName) {
+        const wikiApiUrl = 'https://escapefromtarkov.fandom.com/api.php';
+        const pageResponse = await fetch(`${wikiApiUrl}?action=parse&page=${pageName}&format=json`).catch(error => {
+            return new Response(error.message, {
+                status: 400,
+                statusText: error.message,
+            });
+        });
+        if (!pageResponse.ok) {
+            const error = new Error(`${pageResponse.status} ${pageResponse.statusText}`);
+            error.code = 'httpstatus';
+            error.status = pageResponse.status;
+            error.statusText = pageResponse.statusText;
+            return Promise.reject(error);
+        }
+        const jsonResponse = pageResponse.json();
+        if (jsonResponse.error) {
+            const error = new Error(jsonResponse.error.info);
+            error.code = jsonResponse.error.code;
+            return Promise.reject(error);
+        }
+        return jsonResponse;
     }
 
     customizationTypes() {
@@ -654,8 +775,10 @@ class DataJob {
                 image[imageType](imageOptions);
             }
         }
-        const metadata = await image.metadata();
-        if (metadata.width <= 1 || metadata.height <= 1) {
+        const metadata = await image.metadata().catch(error => {
+            this.logger.log(`Error downloading image: ${error.message}`);
+        });
+        if (!metadata || metadata.width <= 1 || metadata.height <= 1) {
             return fallback;
         }
         this.logger.log(`Downloaded image ${s3FileName}`);

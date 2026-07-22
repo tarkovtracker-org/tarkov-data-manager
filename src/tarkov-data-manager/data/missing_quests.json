@@ -3424,27 +3424,10 @@
         "gameMode": ["regular"],
         "location_id": "5b0fc42d86f7744a585f9105",
         "locationName": "The Lab",
-        "minPlayerLevel": 55,
+        "minPlayerLevel": 25,
         "taskRequirements": [],
         "traderRequirements": [],
         "objectives": [
-            {
-                "id": "6848100b00afffa81f09e36b",
-                "type": "extract",
-                "count": 1,
-                "optional": false,
-                "locationNames": [
-                    "The Lab"
-                ],
-                "map_ids": [
-                    "5b0fc42d86f7744a585f9105"
-                ],
-                "zoneNames": [],
-                "exitStatus": [
-                    "Survived"
-                ],
-                "zones": []
-            },
             {
                 "id": "6761f93bc757eb8c228fa754",
                 "type": "shoot",
@@ -3465,19 +3448,47 @@
                 "playerHealthEffect": null
             },
             {
+                "id": "6761f9d718fa62aac3264ff2",
+                "type": "extract",
+                "count": 1,
+                "optional": false,
+                "locationNames": [
+                    "The Lab"
+                ],
+                "map_ids": [
+                    "5b0fc42d86f7744a585f9105"
+                ],
+                "zoneNames": [],
+                "exitStatus": [
+                    "Survived"
+                ],
+                "zones": []
+            },
+            {
                 "id": "6761f6f1bacf72169272e381",
                 "type": "giveItem",
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
+                "zoneNames": [],
                 "item_id": "655c652d60d0ac437100fed7",
                 "item_name": "BEAR operative figurine",
-                "count": 1,
+				"count": 1,
                 "item": "655c652d60d0ac437100fed7",
+                "items": [
+                    "655c652d60d0ac437100fed7",
+					"655c663a6689c676ce57af85",
+                    "66572b8d80b1cd4b6a67847f",
+                    "68f26124b84c6e1f8a09cfff",
+                    "6841b6b674a3c16f5e03d653",
+                    "68f11224197b61ffe703b16f",
+                    "697cddb414e932098005748d"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": false
+                "foundInRaid": false,
+                "zones": []
             },
             {
                 "id": "6761f7d086fd2d9c941b8aa3",
@@ -3485,14 +3496,24 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
-                "item_id": "655c66e40b2de553b618d4b8",
-                "item_name": "Politician Mutkevich figurine",
-                "count": 1,
-                "item": "655c66e40b2de553b618d4b8",
+                "zoneNames": [],
+                "item_id": "655c673673a43e23e857aebd",
+                "item_name": "Scav figurine",
+				"count": 1,
+                "item": "655c673673a43e23e857aebd",
+                "items": [
+                    "655c673673a43e23e857aebd",
+					"655c67782a1356436041c9c5",
+                    "655c66e40b2de553b618d4b8",
+                    "68f261f6928cd23ddf0471fd",
+                    "690c70a2a1461a01d605a1bd",
+                    "68f260d7b84c6e1f8a09cffd"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": false
+                "foundInRaid": false,
+                "zones": []
             },
             {
                 "id": "6761f7f87b309912d6b5f2a9",
@@ -3500,104 +3521,23 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
+                "zoneNames": [],
                 "item_id": "66572c82ad599021091c6118",
                 "item_name": "Killa figurine",
-                "count": 1,
+				"count": 1,
                 "item": "66572c82ad599021091c6118",
+                "items": [
+                    "66572c82ad599021091c6118",
+					"66572cbdad599021091c611a",
+                    "66572be36a723f7f005a066e",
+                    "655c67ab0d37ca5135388f4b",
+                    "655c669103999d3c810c025b"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": false
-            },
-            {
-                "id": "6761f80838201b0588f39a07",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "66572be36a723f7f005a066e",
-                "item_name": "Reshala figurine",
-                "count": 1,
-                "item": "66572be36a723f7f005a066e",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": false
-            },
-            {
-                "id": "6761f817d42b2f3a242de658",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c67782a1356436041c9c5",
-                "item_name": "Ryzhy figurine",
-                "count": 1,
-                "item": "655c67782a1356436041c9c5",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": false
-            },
-            {
-                "id": "6761f826d5b89d2d15b53eca",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c673673a43e23e857aebd",
-                "item_name": "Scav figurine",
-                "count": 1,
-                "item": "655c673673a43e23e857aebd",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": false
-            },
-            {
-                "id": "6761f838d641d60f18a45e1f",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "66572cbdad599021091c611a",
-                "item_name": "Tagilla figurine",
-                "count": 1,
-                "item": "66572cbdad599021091c611a",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": false
-            },
-            {
-                "id": "6761f85183d342080d39ca98",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c663a6689c676ce57af85",
-                "item_name": "USEC operative figurine",
-                "count": 1,
-                "item": "655c663a6689c676ce57af85",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": false
-            },
-            {
-                "id": "6761f862c1ba6ee8e161d3d6",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c669103999d3c810c025b",
-                "item_name": "Cultist figurine",
-                "count": 1,
-                "item": "655c669103999d3c810c025b",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": false
+                "foundInRaid": false,
+                "zones": []
             },
             {
                 "id": "6761f87227aeff895cef62c5",
@@ -3605,14 +3545,29 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
-                "item_id": "66572b8d80b1cd4b6a67847f",
-                "item_name": "Den figurine",
-                "count": 1,
-                "item": "66572b8d80b1cd4b6a67847f",
+                "zoneNames": [],
+                "item_id": "68f25c64b2b53abd200b954f",
+                "item_name": "Prapor figurine",
+				"count": 1,
+                "item": "68f25c64b2b53abd200b954f",
+                "items": [
+                    "68f25c64b2b53abd200b954f",
+					"68f25ce9b2b53abd200b9551",
+                    "68f25da3b84c6e1f8a09cffb",
+                    "68f25eba19a2b503d70dc28f",
+                    "68f25eef19a2b503d70dc291",
+                    "68f25f1201fb9de974058be4",
+                    "68f25f3a5d977110860c3350",
+                    "68f25faa22c8979ee308f4da",
+                    "68f25fdf928cd23ddf0471fb",
+                    "68f26063b2b53abd200b9553",
+                    "68f2608301fb9de974058be6"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": false
+                "foundInRaid": false,
+                "zones": []
             }
         ],
         "startRewards": {
@@ -3660,7 +3615,27 @@
         "restartable": false,
         "experience": 10000,
         "tarkovDataId": null,
-        "factionName": "Any"
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "6761f28a022f60bb320f3e95 name": "Neuanfang",
+                "6761f93bc757eb8c228fa754": "Eliminate Scavs",
+                "6761f9d718fa62aac3264ff2": "Survive and extract from The Lab",
+                "6761f6f1bacf72169272e381": "Hand over any PMC figurine",
+                "6761f7d086fd2d9c941b8aa3": "Hand over any Scav figurine",
+                "6761f7f87b309912d6b5f2a9": "Hand over any Boss figurine",
+                "6761f87227aeff895cef62c5": "Hand over any Trader figurine"
+            },
+            "zh": {
+                "6761f28a022f60bb320f3e95 name": "新起点",
+                "6761f93bc757eb8c228fa754": "消灭 Scav",
+                "6761f9d718fa62aac3264ff2": "以幸存状态撤离实验室",
+                "6761f6f1bacf72169272e381": "上交任意样式的 PMC 玩偶",
+                "6761f7d086fd2d9c941b8aa3": "上交任意 Scav 玩偶",
+                "6761f7f87b309912d6b5f2a9": "上交任意 Boss 玩偶",
+                "6761f87227aeff895cef62c5": "上交任意 商人 玩偶"
+            }
+        }
     },
     "6761ff17cdc36bd66102e9d0": {
         "id": "6761ff17cdc36bd66102e9d0",
@@ -3669,13 +3644,32 @@
         "gameMode": ["regular"],
         "location_id": "5b0fc42d86f7744a585f9105",
         "locationName": "The Lab",
-        "minPlayerLevel": 55,
+        "minPlayerLevel": 30,
         "requiredPrestige": "672df12f97f0469cea52f55e",
         "taskRequirements": [],
         "traderRequirements": [],
         "objectives": [
             {
-                "id": "6761f9d718fa62aac3264ff2",
+                "id": "6762015739c53fca8ac51336",
+                "type": "shoot",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "target": "AnyPmc",
+                "count": 10,
+                "shotType": "kill",
+                "usingWeapon": [],
+                "usingWeaponMods": [],
+                "zoneNames": [],
+                "distance": null,
+                "wearing": [],
+                "notWearing": [],
+                "healthEffect": null,
+                "enemyHealthEffect": null,
+                "playerHealthEffect": null
+            },
+            {
+                "id": "6761ff17cdc36bd66102e9d6",
                 "type": "extract",
                 "count": 1,
                 "optional": false,
@@ -3692,38 +3686,30 @@
                 "zones": []
             },
             {
-                "id": "6762015739c53fca8ac51336",
-                "type": "shoot",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "target": "AnyPmc",
-                "count": 15,
-                "shotType": "kill",
-                "usingWeapon": [],
-                "usingWeaponMods": [],
-                "zoneNames": [],
-                "distance": null,
-                "wearing": [],
-                "notWearing": [],
-                "healthEffect": null,
-                "enemyHealthEffect": null,
-                "playerHealthEffect": null
-            },
-            {
                 "id": "6761ff17cdc36bd66102e9d8",
                 "type": "giveItem",
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
+                "zoneNames": [],
                 "item_id": "655c652d60d0ac437100fed7",
                 "item_name": "BEAR operative figurine",
-                "count": 1,
+				"count": 2,
                 "item": "655c652d60d0ac437100fed7",
+                "items": [
+                    "655c652d60d0ac437100fed7",
+					"655c663a6689c676ce57af85",
+                    "66572b8d80b1cd4b6a67847f",
+                    "68f26124b84c6e1f8a09cfff",
+                    "6841b6b674a3c16f5e03d653",
+                    "68f11224197b61ffe703b16f",
+                    "697cddb414e932098005748d"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             },
             {
                 "id": "6761ff17cdc36bd66102e9d9",
@@ -3731,14 +3717,24 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
-                "item_id": "655c66e40b2de553b618d4b8",
-                "item_name": "Politician Mutkevich figurine",
-                "count": 1,
-                "item": "655c66e40b2de553b618d4b8",
+                "zoneNames": [],
+                "item_id": "655c673673a43e23e857aebd",
+                "item_name": "Scav figurine",
+				"count": 2,
+                "item": "655c673673a43e23e857aebd",
+                "items": [
+                    "655c673673a43e23e857aebd",
+					"655c67782a1356436041c9c5",
+                    "655c66e40b2de553b618d4b8",
+                    "68f261f6928cd23ddf0471fd",
+                    "690c70a2a1461a01d605a1bd",
+                    "68f260d7b84c6e1f8a09cffd"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             },
             {
                 "id": "6761ff17cdc36bd66102e9da",
@@ -3746,104 +3742,23 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
+                "zoneNames": [],
                 "item_id": "66572c82ad599021091c6118",
                 "item_name": "Killa figurine",
-                "count": 1,
+				"count": 2,
                 "item": "66572c82ad599021091c6118",
+                "items": [
+                    "66572c82ad599021091c6118",
+					"66572cbdad599021091c611a",
+                    "66572be36a723f7f005a066e",
+                    "655c67ab0d37ca5135388f4b",
+                    "655c669103999d3c810c025b"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6761ff17cdc36bd66102e9db",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "66572be36a723f7f005a066e",
-                "item_name": "Reshala figurine",
-                "count": 1,
-                "item": "66572be36a723f7f005a066e",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6761ff17cdc36bd66102e9dc",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c67782a1356436041c9c5",
-                "item_name": "Ryzhy figurine",
-                "count": 1,
-                "item": "655c67782a1356436041c9c5",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6761ff17cdc36bd66102e9dd",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c673673a43e23e857aebd",
-                "item_name": "Scav figurine",
-                "count": 1,
-                "item": "655c673673a43e23e857aebd",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6761ff17cdc36bd66102e9de",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "66572cbdad599021091c611a",
-                "item_name": "Tagilla figurine",
-                "count": 1,
-                "item": "66572cbdad599021091c611a",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6761ff17cdc36bd66102e9df",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c663a6689c676ce57af85",
-                "item_name": "USEC operative figurine",
-                "count": 1,
-                "item": "655c663a6689c676ce57af85",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6761ff17cdc36bd66102e9e0",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c669103999d3c810c025b",
-                "item_name": "Cultist figurine",
-                "count": 1,
-                "item": "655c669103999d3c810c025b",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             },
             {
                 "id": "6761ff17cdc36bd66102e9e1",
@@ -3851,14 +3766,29 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
-                "item_id": "66572b8d80b1cd4b6a67847f",
-                "item_name": "Den figurine",
-                "count": 1,
-                "item": "66572b8d80b1cd4b6a67847f",
+                "zoneNames": [],
+                "item_id": "68f25c64b2b53abd200b954f",
+                "item_name": "Prapor figurine",
+				"count": 2,
+                "item": "68f25c64b2b53abd200b954f",
+                "items": [
+                    "68f25c64b2b53abd200b954f",
+					"68f25ce9b2b53abd200b9551",
+                    "68f25da3b84c6e1f8a09cffb",
+                    "68f25eba19a2b503d70dc28f",
+                    "68f25eef19a2b503d70dc291",
+                    "68f25f1201fb9de974058be4",
+                    "68f25f3a5d977110860c3350",
+                    "68f25faa22c8979ee308f4da",
+                    "68f25fdf928cd23ddf0471fb",
+                    "68f26063b2b53abd200b9553",
+                    "68f2608301fb9de974058be6"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             }
         ],
         "startRewards": {
@@ -3906,7 +3836,27 @@
         "restartable": false,
         "experience": 11000,
         "tarkovDataId": null,
-        "factionName": "Any"
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "6761ff17cdc36bd66102e9d0 name": "Neuanfang",
+                "6762015739c53fca8ac51336": "Eliminate PMC operatives",
+                "6761ff17cdc36bd66102e9d6": "Survive and extract from The Lab",
+                "6761ff17cdc36bd66102e9d8": "Hand over any found in raid PMC figurine",
+                "6761ff17cdc36bd66102e9d9": "Hand over any found in raid Scav figurine",
+                "6761ff17cdc36bd66102e9da": "Hand over any found in raid Boss figurine",
+                "6761ff17cdc36bd66102e9e1": "Hand over any found in raid Trader figurine"
+            },
+            "zh": {
+                "6761ff17cdc36bd66102e9d0 name": "新起点",
+                "6762015739c53fca8ac51336": "消灭 PMC 行动人员",
+                "6761ff17cdc36bd66102e9d6": "以幸存状态撤离实验室",
+                "6761ff17cdc36bd66102e9d8": "上交任意在战局中找到的 PMC 玩偶",
+                "6761ff17cdc36bd66102e9d9": "上交任意在战局中找到的 Scav 玩偶",
+                "6761ff17cdc36bd66102e9da": "上交任意在战局中找到的 Boss 玩偶",
+                "6761ff17cdc36bd66102e9e1": "上交任意在战局中找到的 商人 玩偶"
+            }
+        }
     },
     "6848100b00afffa81f09e365": {
         "id": "6848100b00afffa81f09e365",
@@ -3915,7 +3865,7 @@
         "gameMode": ["regular"],
         "location_id": null,
         "locationName": "any",
-        "minPlayerLevel": 55,
+        "minPlayerLevel": 35,
         "requiredPrestige": "672df4281ab8d9c8849a0c88",
         "taskRequirements": [],
         "traderRequirements": [],
@@ -3927,7 +3877,7 @@
                 "locationNames": [],
                 "map_ids": [],
                 "target": "AnyPmc",
-                "count": 25,
+                "count": 15,
                 "shotType": "kill",
                 "usingWeapon": [],
                 "usingWeaponMods": [],
@@ -3946,7 +3896,7 @@
                 "locationNames": [],
                 "map_ids": [],
                 "target": "PmcBot",
-                "count": 50,
+                "count": 20,
                 "shotType": "kill",
                 "usingWeapon": [],
                 "usingWeaponMods": [],
@@ -3959,7 +3909,7 @@
                 "playerHealthEffect": null
             },
             {
-                "id": "6848116061809d65b8503617",
+                "id": "6848100b00afffa81f09e36b",
                 "type": "extract",
                 "count": 1,
                 "optional": false,
@@ -3968,13 +3918,26 @@
                     "Strets of Tarkov"
                 ],
                 "map_ids": [
-                    "5714dc692459777137212e12",
+                    "5b0fc42d86f7744a585f9105",
                     "5714dc692459777137212e12"
                 ],
                 "zoneNames": [],
-                "exitStatus": [
-                    "marathon Name"
+                "exitStatus": [],
+                "zones": []
+            },
+            {
+                "id": "6848116061809d65b8503617",
+                "type": "extract",
+                "count": 1,
+                "optional": false,
+                "locationNames": [
+                    "Strets of Tarkov"
                 ],
+                "map_ids": [
+                    "5714dc692459777137212e12"
+                ],
+                "zoneNames": [],
+                "exitStatus": [],
                 "zones": []
             },
             {
@@ -3983,14 +3946,25 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
+                "zoneNames": [],
                 "item_id": "655c652d60d0ac437100fed7",
                 "item_name": "BEAR operative figurine",
-                "count": 1,
+				"count": 3,
                 "item": "655c652d60d0ac437100fed7",
+                "items": [
+                    "655c652d60d0ac437100fed7",
+					"655c663a6689c676ce57af85",
+                    "66572b8d80b1cd4b6a67847f",
+                    "68f26124b84c6e1f8a09cfff",
+                    "6841b6b674a3c16f5e03d653",
+                    "68f11224197b61ffe703b16f",
+                    "697cddb414e932098005748d"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             },
             {
                 "id": "6848100b00afffa81f09e36e",
@@ -3998,14 +3972,24 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
-                "item_id": "655c66e40b2de553b618d4b8",
-                "item_name": "Politician Mutkevich figurine",
-                "count": 1,
-                "item": "655c66e40b2de553b618d4b8",
+                "zoneNames": [],
+                "item_id": "655c673673a43e23e857aebd",
+                "item_name": "Scav figurine",
+				"count": 3,
+                "item": "655c673673a43e23e857aebd",
+                "items": [
+                    "655c673673a43e23e857aebd",
+					"655c67782a1356436041c9c5",
+                    "655c66e40b2de553b618d4b8",
+                    "68f261f6928cd23ddf0471fd",
+                    "690c70a2a1461a01d605a1bd",
+                    "68f260d7b84c6e1f8a09cffd"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             },
             {
                 "id": "6848100b00afffa81f09e36f",
@@ -4013,104 +3997,23 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
+                "zoneNames": [],
                 "item_id": "66572c82ad599021091c6118",
                 "item_name": "Killa figurine",
-                "count": 1,
+				"count": 3,
                 "item": "66572c82ad599021091c6118",
+                "items": [
+                    "66572c82ad599021091c6118",
+					"66572cbdad599021091c611a",
+                    "66572be36a723f7f005a066e",
+                    "655c67ab0d37ca5135388f4b",
+                    "655c669103999d3c810c025b"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6848100b00afffa81f09e370",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "66572be36a723f7f005a066e",
-                "item_name": "Reshala figurine",
-                "count": 1,
-                "item": "66572be36a723f7f005a066e",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6848100b00afffa81f09e371",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c67782a1356436041c9c5",
-                "item_name": "Ryzhy figurine",
-                "count": 1,
-                "item": "655c67782a1356436041c9c5",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6848100b00afffa81f09e372",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c673673a43e23e857aebd",
-                "item_name": "Scav figurine",
-                "count": 1,
-                "item": "655c673673a43e23e857aebd",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6848100b00afffa81f09e373",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "66572cbdad599021091c611a",
-                "item_name": "Tagilla figurine",
-                "count": 1,
-                "item": "66572cbdad599021091c611a",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6848100b00afffa81f09e374",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c663a6689c676ce57af85",
-                "item_name": "USEC operative figurine",
-                "count": 1,
-                "item": "655c663a6689c676ce57af85",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "6848100b00afffa81f09e375",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c669103999d3c810c025b",
-                "item_name": "Cultist figurine",
-                "count": 1,
-                "item": "655c669103999d3c810c025b",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             },
             {
                 "id": "6848100b00afffa81f09e376",
@@ -4118,14 +4021,29 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
-                "item_id": "66572b8d80b1cd4b6a67847f",
-                "item_name": "Den figurine",
-                "count": 1,
-                "item": "66572b8d80b1cd4b6a67847f",
+                "zoneNames": [],
+                "item_id": "68f25c64b2b53abd200b954f",
+                "item_name": "Prapor figurine",
+				"count": 3,
+                "item": "68f25c64b2b53abd200b954f",
+                "items": [
+                    "68f25c64b2b53abd200b954f",
+					"68f25ce9b2b53abd200b9551",
+                    "68f25da3b84c6e1f8a09cffb",
+                    "68f25eba19a2b503d70dc28f",
+                    "68f25eef19a2b503d70dc291",
+                    "68f25f1201fb9de974058be4",
+                    "68f25f3a5d977110860c3350",
+                    "68f25faa22c8979ee308f4da",
+                    "68f25fdf928cd23ddf0471fb",
+                    "68f26063b2b53abd200b9553",
+                    "68f2608301fb9de974058be6"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             }
         ],
         "startRewards": {
@@ -4180,7 +4098,31 @@
         "restartable": false,
         "experience": 11000,
         "tarkovDataId": null,
-        "factionName": "Any"
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "6848100b00afffa81f09e365 name": "Neuanfang",
+                "6848100b00afffa81f09e369": "Eliminate PMC operatives",
+                "684812156189183883f13947": "Eliminate Raiders",
+                "6848100b00afffa81f09e36b": "Use the transit from The Lab to Streets of Tarkov",
+                "6848116061809d65b8503617": "Survive and extract from Streets of Tarkov",
+                "6848100b00afffa81f09e36d": "Hand over any found in raid PMC figurine",
+                "6848100b00afffa81f09e36e": "Hand over any found in raid Scav figurine",
+                "6848100b00afffa81f09e36f": "Hand over any found in raid Boss figurine",
+                "6848100b00afffa81f09e376": "Hand over any found in raid Trader figurine"
+            },
+            "zh": {
+                "6848100b00afffa81f09e365 name": "新起点",
+                "6848100b00afffa81f09e369": "消灭 PMC 行动人员",
+                "684812156189183883f13947": "消灭 掠夺者",
+                "6848100b00afffa81f09e36b": "使用转移功能从实验室转移到塔科夫街区",
+                "6848116061809d65b8503617": "以幸存状态撤离塔科夫街区",
+                "6848100b00afffa81f09e36d": "上交任意在战局中找到的 PMC 玩偶",
+                "6848100b00afffa81f09e36e": "上交任意在战局中找到的 Scav 玩偶",
+                "6848100b00afffa81f09e36f": "上交任意在战局中找到的 Boss 玩偶",
+                "6848100b00afffa81f09e376": "上交任意在战局中找到的 商人 玩偶"
+            }
+        }
     },
     "68481881f43abfdda2058369": {
         "id": "68481881f43abfdda2058369",
@@ -4189,7 +4131,7 @@
         "gameMode": ["regular"],
         "location_id": null,
         "locationName": "any",
-        "minPlayerLevel": 55,
+        "minPlayerLevel": 40,
         "requiredPrestige": "683da91d6f472cfa738c52f2",
         "taskRequirements": [],
         "traderRequirements": [],
@@ -4201,7 +4143,7 @@
                 "locationNames": [],
                 "map_ids": [],
                 "target": "AnyPmc",
-                "count": 40,
+                "count": 20,
                 "shotType": "kill",
                 "usingWeapon": [],
                 "usingWeaponMods": [],
@@ -4220,7 +4162,7 @@
                 "locationNames": [],
                 "map_ids": [],
                 "target": "ExUsec",
-                "count": 100,
+                "count": 30,
                 "shotType": "kill",
                 "usingWeapon": [],
                 "usingWeaponMods": [],
@@ -4242,13 +4184,11 @@
                     "Strets of Tarkov"
                 ],
                 "map_ids": [
-                    "5714dc692459777137212e12",
+                    "5b0fc42d86f7744a585f9105",
                     "5714dc692459777137212e12"
                 ],
                 "zoneNames": [],
-                "exitStatus": [
-                    "marathon Name"
-                ],
+                "exitStatus": [],
                 "zones": []
             },
             {
@@ -4265,9 +4205,22 @@
                     "5714dbc024597771384a510d"
                 ],
                 "zoneNames": [],
-                "exitStatus": [
-                    "marathon Name"
+                "exitStatus": [],
+                "zones": []
+            },
+            {
+                "id": "68486a0eda4828c0772e337b",
+                "type": "extract",
+                "count": 1,
+                "optional": false,
+                "locationNames": [
+                    "Interchange"
                 ],
+                "map_ids": [
+                    "5714dbc024597771384a510d"
+                ],
+                "zoneNames": [],
+                "exitStatus": [],
                 "zones": []
             },
             {
@@ -4276,14 +4229,25 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
+                "zoneNames": [],
                 "item_id": "655c652d60d0ac437100fed7",
                 "item_name": "BEAR operative figurine",
-                "count": 1,
+				"count": 3,
                 "item": "655c652d60d0ac437100fed7",
+                "items": [
+                    "655c652d60d0ac437100fed7",
+					"655c663a6689c676ce57af85",
+                    "66572b8d80b1cd4b6a67847f",
+                    "68f26124b84c6e1f8a09cfff",
+                    "6841b6b674a3c16f5e03d653",
+                    "68f11224197b61ffe703b16f",
+                    "697cddb414e932098005748d"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             },
             {
                 "id": "68481881f43abfdda2058372",
@@ -4291,14 +4255,24 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
-                "item_id": "655c66e40b2de553b618d4b8",
-                "item_name": "Politician Mutkevich figurine",
-                "count": 1,
-                "item": "655c66e40b2de553b618d4b8",
+                "zoneNames": [],
+                "item_id": "655c673673a43e23e857aebd",
+                "item_name": "Scav figurine",
+				"count": 3,
+                "item": "655c673673a43e23e857aebd",
+                "items": [
+                    "655c673673a43e23e857aebd",
+					"655c67782a1356436041c9c5",
+                    "655c66e40b2de553b618d4b8",
+                    "68f261f6928cd23ddf0471fd",
+                    "690c70a2a1461a01d605a1bd",
+                    "68f260d7b84c6e1f8a09cffd"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             },
             {
                 "id": "68481881f43abfdda2058373",
@@ -4306,104 +4280,23 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
+                "zoneNames": [],
                 "item_id": "66572c82ad599021091c6118",
                 "item_name": "Killa figurine",
-                "count": 1,
+				"count": 3,
                 "item": "66572c82ad599021091c6118",
+                "items": [
+                    "66572c82ad599021091c6118",
+					"66572cbdad599021091c611a",
+                    "66572be36a723f7f005a066e",
+                    "655c67ab0d37ca5135388f4b",
+                    "655c669103999d3c810c025b"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "68481881f43abfdda2058374",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "66572be36a723f7f005a066e",
-                "item_name": "Reshala figurine",
-                "count": 1,
-                "item": "66572be36a723f7f005a066e",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "68481881f43abfdda2058375",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c67782a1356436041c9c5",
-                "item_name": "Ryzhy figurine",
-                "count": 1,
-                "item": "655c67782a1356436041c9c5",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "68481881f43abfdda2058376",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c673673a43e23e857aebd",
-                "item_name": "Scav figurine",
-                "count": 1,
-                "item": "655c673673a43e23e857aebd",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "68481881f43abfdda2058377",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "66572cbdad599021091c611a",
-                "item_name": "Tagilla figurine",
-                "count": 1,
-                "item": "66572cbdad599021091c611a",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "68481881f43abfdda2058378",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c663a6689c676ce57af85",
-                "item_name": "USEC operative figurine",
-                "count": 1,
-                "item": "655c663a6689c676ce57af85",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
-            },
-            {
-                "id": "68481881f43abfdda2058379",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "655c669103999d3c810c025b",
-                "item_name": "Cultist figurine",
-                "count": 1,
-                "item": "655c669103999d3c810c025b",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             },
             {
                 "id": "68481881f43abfdda205837a",
@@ -4411,14 +4304,29 @@
                 "optional": false,
                 "locationNames": [],
                 "map_ids": [],
-                "item_id": "66572b8d80b1cd4b6a67847f",
-                "item_name": "Den figurine",
-                "count": 1,
-                "item": "66572b8d80b1cd4b6a67847f",
+                "zoneNames": [],
+                "item_id": "68f25c64b2b53abd200b954f",
+                "item_name": "Prapor figurine",
+				"count": 3,
+                "item": "68f25c64b2b53abd200b954f",
+                "items": [
+                    "68f25c64b2b53abd200b954f",
+					"68f25ce9b2b53abd200b9551",
+                    "68f25da3b84c6e1f8a09cffb",
+                    "68f25eba19a2b503d70dc28f",
+                    "68f25eef19a2b503d70dc291",
+                    "68f25f1201fb9de974058be4",
+                    "68f25f3a5d977110860c3350",
+                    "68f25faa22c8979ee308f4da",
+                    "68f25fdf928cd23ddf0471fb",
+                    "68f26063b2b53abd200b9553",
+                    "68f2608301fb9de974058be6"
+                ],
                 "dogTagLevel": 0,
                 "maxDurability": 100,
                 "minDurability": 0,
-                "foundInRaid": true
+                "foundInRaid": true,
+                "zones": []
             }
         ],
         "startRewards": {
@@ -4473,7 +4381,33 @@
         "restartable": false,
         "experience": 11000,
         "tarkovDataId": null,
-        "factionName": "Any"
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "68481881f43abfdda2058369 name": "Neuanfang",
+                "68481881f43abfdda205836d": "Eliminate PMC operatives",
+                "68481a8eda10b760b3b1a73f": "Eliminate Rogues",
+                "68481881f43abfdda205836f": "Use the transit from The Lab to Streets of Tarkov",
+                "68483a05801f8d9e40ac05b1": "Use the transit from Streets of Tarkov to Interchange",
+                "68486a0eda4828c0772e337b": "Survive and extract from Interchange",
+                "68481881f43abfdda2058371": "Hand over any found in raid PMC figurine",
+                "68481881f43abfdda2058372": "Hand over any found in raid Scav figurine",
+                "68481881f43abfdda2058373": "Hand over any found in raid Boss figurine",
+                "68481881f43abfdda205837a": "Hand over any found in raid Trader figurine"
+            },
+            "zh": {
+                "68481881f43abfdda2058369 name": "新起点",
+                "68481881f43abfdda205836d": "消灭 PMC 行动人员",
+                "68481a8eda10b760b3b1a73f": "消灭 游荡者",
+                "68481881f43abfdda205836f": "使用转移功能从实验室转移到塔科夫街区",
+                "68483a05801f8d9e40ac05b1": "使用转移功能从塔科夫街区转移到立交桥",
+                "68486a0eda4828c0772e337b": "以幸存状态撤离立交桥",
+                "68481881f43abfdda2058371": "上交任意在战局中找到的 PMC 玩偶",
+                "68481881f43abfdda2058372": "上交任意在战局中找到的 Scav 玩偶",
+                "68481881f43abfdda2058373": "上交任意在战局中找到的 Boss 玩偶",
+                "68481881f43abfdda205837a": "上交任意在战局中找到的 商人 玩偶"
+            }
+        }
     },
     "67e993f5ed537409f009da75": {
         "id": "67e993f5ed537409f009da75",
@@ -4549,83 +4483,13 @@
         "restartable": false,
         "experience": 0,
         "tarkovDataId": null,
-        "factionName": "Any"
-    },
-    "6834287b7559f4e6d50bc0fa": {
-        "id": "6834287b7559f4e6d50bc0fa",
-        "name": "Postponed Reward [PVE ZONE]",
-        "trader": "6617beeaa9cfa777ca915b7c",
-        "gameMode": ["pve"],
-        "location_id": null,
-        "locationName": null,
-        "minPlayerLevel": 0,
-        "taskRequirements": [
-            {
-                "task": "683427418f5b18d29a05d9e3",
-                "name": "Surprise Gift [PVE ZONE]",
-                "status": [
-                    "complete"
-                ]
+        "factionName": "Any",
+        "locale": {
+            "de": {
+                "67e993f5ed537409f009da75 name": "Aufgeschobene Belohnung [PVP ZONE]",
+                "67ebc5f501052193cdb4c9ac": "Übergib den Gegenstand: Lega-Medaille"
             }
-        ],
-        "traderRequirements": [],
-        "objectives": [
-            {
-                "id": "6834287b7559f4e6d50bc0fd",
-                "type": "giveItem",
-                "optional": false,
-                "locationNames": [],
-                "map_ids": [],
-                "item_id": "6656560053eaaa7a23349c86",
-                "item_name": "Lega Medal",
-                "count": 1,
-                "item": "6656560053eaaa7a23349c86",
-                "dogTagLevel": 0,
-                "maxDurability": 100,
-                "minDurability": 0,
-                "foundInRaid": false
-            }
-        ],
-        "startRewards": {
-            "traderStanding": [],
-            "items": [],
-            "offerUnlock": [],
-            "skillLevelReward": [],
-            "traderUnlock": []
-        },
-        "finishRewards": {
-            "traderStanding": [
-                {
-                    "trader_id": "6617beeaa9cfa777ca915b7c",
-                    "name": "Ref",
-                    "standing": 0.01
-                }
-            ],
-            "items": [
-                {
-                    "item": "664a55d84a90fc2c8a6305c9",
-                    "item_name": "Secure Container Theta",
-                    "count": 1,
-                    "contains": [],
-                    "attributes": []
-                }
-            ],
-            "offerUnlock": [],
-            "skillLevelReward": [],
-            "traderUnlock": []
-        },
-        "failureOutcome": {
-            "traderStanding": [],
-            "items": [],
-            "offerUnlock": [],
-            "skillLevelReward": [],
-            "traderUnlock": []
-        },
-        "failConditions": [],
-        "restartable": false,
-        "experience": 0,
-        "tarkovDataId": null,
-        "factionName": "Any"
+        }
     },
     "68db9c7557bc51a8c804c14b": {
         "id": "68db9c7557bc51a8c804c14b",
@@ -4758,6 +4622,10 @@
             "zh": {
                 "68db9c7557bc51a8c804c14b name": "目标与手段",
                 "68db9ea0e6c69908254eceee": "使用 9x39 毫米口径的武器在 50 米开外消灭 PMC"
+            },
+            "de": {
+                "68db9c7557bc51a8c804c14b name": "Ziele und Mittel",
+                "68db9ea0e6c69908254eceee": "Eliminiere PMC-Operatoren aus über 50 Metern Entfernung, während du eine beliebige Waffe im Kaliber 9x39 benutzt"
             }
         }
     },
@@ -4880,6 +4748,10 @@
             "zh": {
                 "68ee1c18b4e5bc9a68018cd7 name": "不容置问",
                 "68ee1cc7e8b13097f525e6f2": "上交战局中找到的物品：Red Rebel 冰镐"
+            },
+            "de": {
+                "68ee1c18b4e5bc9a68018cd7 name": "Keine Fragen",
+                "68ee1cc7e8b13097f525e6f2": "Übergib den im Raid gefundenen Gegenstand: Red Rebel Eispickel"
             }
         }
     },
@@ -5845,6 +5717,3406 @@
                 "6942b44f891369fc790e385a name": "轻重缓急",
                 "6942b48e6998a45a7b90cd5b": "佩戴有源耳机但不穿任何护甲的情况下消灭 PMC 行动人员",
                 "6942b72980d7f587b5b3ca86": "穿戴 TSH-4M-L 软质坦克乘员头盔消灭 PMC 行动人员"
+            },
+            "de": {
+                "6942b44f891369fc790e385a name": "Prioritäten setzen",
+                "6942b48e6998a45a7b90cd5b": "Eliminiere PMC-Operatoren, während du ein aktives Headset benutzt und keine Rüstung trägst",
+                "6942b72980d7f587b5b3ca86": "Eliminiere PMC-Operatoren, während du den weichen Panzerfahrerhelm TSh-4M-L trägst und kein aktives Headset benutzt"
+            }
+        }
+    },
+    "697877e0c639962b2e0cf24f": {
+        "id": "697877e0c639962b2e0cf24f",
+        "name": "Arena Business [PVP ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["regular"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "66058cb7c7f3584787181476",
+                "name": "Balancing - Part 1 [PVP ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69789727f9ef98d604a0a4eb",
+                "description": "69789727f9ef98d604a0a4eb",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "69788db3878a4385d10c0718",
+                "quest_name": "Professional Fitness - Part 2 [PVP ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            },
+            {
+                "id": "69789737271caeeb3db66e8d",
+                "description": "69789737271caeeb3db66e8d",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "69789418b2187365e70bb947",
+                "quest_name": "To Great Heights! - Part 6 [PVP ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            },
+            {
+                "id": "6978973c2834db5eb178fdc8",
+                "description": "6978973c2834db5eb178fdc8",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "697895b6c639962b2e0cf268",
+                "quest_name": "Hold the Lead[PVP ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.04
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 250,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "6656560053eaaa7a23349c86",
+                    "item_name": "Lega Medal",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "66572b3f6a723f7f005a066c",
+                    "item_name": "Locked weapon crate (Rare)",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "66572b88ac60f009f270d1dc",
+                    "item_name": "Locked supply crate (Rare)",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "66572bb3ac60f009f270d1df",
+                    "item_name": "Locked valuables crate (Rare)",
+                    "count": 2,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 19500,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "697877e0c639962b2e0cf24f name": "Arena Business [PVP ZONE]",
+                "69789727f9ef98d604a0a4eb": "Complete the task Professional Fitness - Part 2",
+                "69789737271caeeb3db66e8d": "Complete the task To Great Heights! - Part 6",
+                "6978973c2834db5eb178fdc8": "Complete the task Hold the Lead"
+            },
+            "zh": {
+                "697877e0c639962b2e0cf24f name": "竞技场差事（PVP）",
+                "69789727f9ef98d604a0a4eb": "完成任务：专业热身 - 2",
+                "69789737271caeeb3db66e8d": "完成任务：再创新高！- 6",
+                "6978973c2834db5eb178fdc8": "完成任务：保持领先"
+            },
+            "de": {
+                "697877e0c639962b2e0cf24f name": "Arena-Geschäft [PVP ZONE]",
+                "69789727f9ef98d604a0a4eb": "Schließe die Aufgabe Berufliche Fitness - Teil 2 ab",
+                "69789737271caeeb3db66e8d": "Schließe die Aufgabe Zu großen Höhen! - Teil 6 ab",
+                "6978973c2834db5eb178fdc8": "Schließe die Aufgabe In Führung bleiben ab"
+            }
+        }
+    },
+    "69788c2bac719606e40b4e77": {
+        "id": "69788c2bac719606e40b4e77",
+        "name": "Professional Fitness - Part 1 [PVP ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["regular"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "66058cb7c7f3584787181476",
+                "name": "Balancing - Part 1 [PVP ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69788c6d403c43a13a7ba7c2",
+                "description": "69788c6d403c43a13a7ba7c2",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.01
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 10,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 1800,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69788c2bac719606e40b4e77 name": "Professional Fitness - Part 1 [PVP ZONE]",
+                "69788c6d403c43a13a7ba7c2": "Play a match in CheckPoint or Last Hero mode in Arena"
+            },
+            "zh": {
+                "69788c2bac719606e40b4e77 name": "专业热身 - 1（PVP）",
+                "69788c6d403c43a13a7ba7c2": "在竞技场 LastHero 或 CheckPoint 模式进行一场游戏"
+            },
+            "de": {
+                "69788c2bac719606e40b4e77 name": "Berufliche Fitness - Teil 1 [PVP ZONE]",
+                "69788c6d403c43a13a7ba7c2": "Spiele ein Match im CheckPoint- oder Last Hero-Modus in der Arena"
+            }
+        }
+    },
+    "69788db3878a4385d10c0718": {
+        "id": "69788db3878a4385d10c0718",
+        "name": "Professional Fitness - Part 2 [PVP ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["regular"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "69788c2bac719606e40b4e77",
+                "name": "Professional Fitness - Part 1 [PVP ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69788fc3dc3074ce1c851e20",
+                "description": "69788fc3dc3074ce1c851e20",
+                "type": "visit",
+                "count": 20,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.01
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 15,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "6656560053eaaa7a23349c86",
+                    "item_name": "Lega Medal",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 2400,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69788db3878a4385d10c0718 name": "Professional Fitness - Part 2 [PVP ZONE]",
+                "69788fc3dc3074ce1c851e20": "Eliminate 20 enemies in Arena"
+            },
+            "zh": {
+                "69788db3878a4385d10c0718 name": "专业热身 - 2（PVP）",
+                "69788fc3dc3074ce1c851e20": "在竞技场任意模式击杀 20 名敌人"
+            },
+            "de": {
+                "69788db3878a4385d10c0718 name": "Berufliche Fitness - Teil 2 [PVP ZONE]",
+                "69788fc3dc3074ce1c851e20": "Eliminiere 20 Gegner in der Arena"
+            }
+        }
+    },
+    "69789418b2187365e70bb947": {
+        "id": "69789418b2187365e70bb947",
+        "name": "To Great Heights! - Part 6 [PVP ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["regular"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "66058cc9ae4719735349b9ea",
+                "name": "To Great Heights! - Part 5 [PVP ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "6978a28fe2bee676ada49c79",
+                "description": "6978a28fe2bee676ada49c79",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 55,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [
+                {
+                    "id": "697877e0c639962b2e0cf24f-664a5428d5e33a713b622379",
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "trader_name": "Ref",
+                    "level": 2,
+                    "item": "664a5428d5e33a713b622379",
+                    "item_name": "APOK Tactical Wasteland Gladius",
+                    "count": 1
+                }
+            ],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 7700,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69789418b2187365e70bb947 name": "To Great Heights! - Part 6 [PVP ZONE]",
+                "6978a28fe2bee676ada49c79": "Win 2 matches in a row in TeamFight, BlastGang or CheckPoint mode in Arena"
+            },
+            "zh": {
+                "69789418b2187365e70bb947 name": "再创新高！- 6（PVP）",
+                "6978a28fe2bee676ada49c79": "在竞技场连续赢得两场 TeamFight 或 BlastGang 或 CheckPoint 模式的战斗"
+            },
+            "de": {
+                "69789418b2187365e70bb947 name": "Zu großen Höhen! - Teil 6 [PVP ZONE]",
+                "6978a28fe2bee676ada49c79": "Gewinne 2 Matches in Folge im TeamFight-, BlastGang- oder CheckPoint-Modus in der Arena"
+            }
+        }
+    },
+    "697895b6c639962b2e0cf268": {
+        "id": "697895b6c639962b2e0cf268",
+        "name": "Hold the Lead [PVP ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["regular"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "69789418b2187365e70bb947",
+                "name": "To Great Heights! - Part 6 [PVP ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "697895e700201d158bb28f22",
+                "description": "697895e700201d158bb28f22",
+                "type": "visit",
+                "count": 75,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.05
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 75,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 9100,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "697895b6c639962b2e0cf268 name": "Hold the Lead [PVP ZONE]",
+                "697895e700201d158bb28f22": "Eliminate 75 enemies in Arena"
+            },
+            "zh": {
+                "697895b6c639962b2e0cf268 name": "保持领先（PVP）",
+                "697895e700201d158bb28f22": "在竞技场任意模式击杀 75 名敌人"
+            },
+            "de": {
+                "697895b6c639962b2e0cf268 name": "In Führung bleiben[PVP ZONE]",
+                "697895e700201d158bb28f22": "Eliminiere 75 Gegner in der Arena"
+            }
+        }
+    },
+    "697878057aa1273126030fb0": {
+        "id": "697878057aa1273126030fb0",
+        "name": "Arena Business [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "68341846186efa3c5b07f989",
+                "name": "Balancing - Part 1 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69789903c30426685c9f3080",
+                "description": "69789903c30426685c9f3080",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "6978907718bd6d7cbd0e8b8e",
+                "quest_name": "Professional Fitness - Part 2 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            },
+            {
+                "id": "6978990cbe971818240c2d7f",
+                "description": "6978990cbe971818240c2d7f",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "697895277d31587eab080266",
+                "quest_name": "To Great Heights! - Part 6 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            },
+            {
+                "id": "697899167ed646e5d6187fea",
+                "description": "697899167ed646e5d6187fea",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "69789660b2187365e70bb94a",
+                "quest_name": "Hold the Lead[PVE ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 250,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "6656560053eaaa7a23349c86",
+                    "item_name": "Lega Medal",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "66572b3f6a723f7f005a066c",
+                    "item_name": "Locked weapon crate (Rare)",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "66572b88ac60f009f270d1dc",
+                    "item_name": "Locked supply crate (Rare)",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "66572bb3ac60f009f270d1df",
+                    "item_name": "Locked valuables crate (Rare)",
+                    "count": 2,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 19500,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "697878057aa1273126030fb0 name": "Arena Business [PVE ZONE]",
+                "69789903c30426685c9f3080": "Complete the task Professional Fitness - Part 2",
+                "6978990cbe971818240c2d7f": "Complete the task To Great Heights! - Part 6",
+                "697899167ed646e5d6187fea": "Complete the task Hold the Lead"
+            },
+            "zh": {
+                "697878057aa1273126030fb0 name": "竞技场差事（PVE）",
+                "69789903c30426685c9f3080": "完成任务：专业热身 - 2",
+                "6978990cbe971818240c2d7f": "完成任务：再创新高！- 6",
+                "697899167ed646e5d6187fea": "完成任务：保持领先"
+            }
+        }
+    },
+    "69788d4e963f08d9140bce19": {
+        "id": "69788d4e963f08d9140bce19",
+        "name": "Professional Fitness - Part 1 [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "68341846186efa3c5b07f989",
+                "name": "Balancing - Part 1 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69788d4e963f08d9140bce1c",
+                "description": "69788d4e963f08d9140bce1c",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.01
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 10,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 1800,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69788d4e963f08d9140bce19 name": "Professional Fitness - Part 1 [PVE ZONE]",
+                "69788d4e963f08d9140bce1c": "Play a match in CheckPoint or Last Hero mode in Arena"
+            },
+            "zh": {
+                "69788d4e963f08d9140bce19 name": "专业热身 - 1（PVE）",
+                "69788d4e963f08d9140bce1c": "在竞技场 LastHero 或 CheckPoint 模式进行一场游戏"
+            }
+        }
+    },
+    "6978907718bd6d7cbd0e8b8e": {
+        "id": "6978907718bd6d7cbd0e8b8e",
+        "name": "Professional Fitness - Part 2 [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "69788d4e963f08d9140bce19",
+                "name": "Professional Fitness - Part 1 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "6978907718bd6d7cbd0e8b91",
+                "description": "6978907718bd6d7cbd0e8b91",
+                "type": "visit",
+                "count": 20,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.01
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 15,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "6656560053eaaa7a23349c86",
+                    "item_name": "Lega Medal",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 2400,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "6978907718bd6d7cbd0e8b8e name": "Professional Fitness - Part 2 [PVE ZONE]",
+                "6978907718bd6d7cbd0e8b91": "Eliminate 20 enemies in Arena"
+            },
+            "zh": {
+                "6978907718bd6d7cbd0e8b8e name": "专业热身 - 2（PVE）",
+                "6978907718bd6d7cbd0e8b91": "在竞技场任意模式击杀 20 名敌人"
+            }
+        }
+    },
+    "697895277d31587eab080266": {
+        "id": "697895277d31587eab080266",
+        "name": "To Great Heights! - Part 6 [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "68342265a8d674b5740b31f0",
+                "name": "To Great Heights! - Part 5 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "6978a2bc18130b67d9156d7a",
+                "description": "6978a2bc18130b67d9156d7a",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.04
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 55,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [
+                {
+                    "id": "697877e0c639962b2e0cf24f-664a5428d5e33a713b622379",
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "trader_name": "Ref",
+                    "level": 2,
+                    "item": "664a5428d5e33a713b622379",
+                    "item_name": "APOK Tactical Wasteland Gladius",
+                    "count": 1
+                }
+            ],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 7700,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "697895277d31587eab080266 name": "To Great Heights! - Part 6 [PVE ZONE]",
+                "6978a2bc18130b67d9156d7a": "Win 2 matches in a row in TeamFight, BlastGang or CheckPoint mode in Arena"
+            },
+            "zh": {
+                "697895277d31587eab080266 name": "再创新高！- 6（PVE）",
+                "6978a2bc18130b67d9156d7a": "在竞技场连续赢得两场 TeamFight 或 BlastGang 或 CheckPoint 模式的战斗"
+            }
+        }
+    },
+    "69789660b2187365e70bb94a": {
+        "id": "69789660b2187365e70bb94a",
+        "name": "Hold the Lead[PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "697895277d31587eab080266",
+                "name": "To Great Heights! - Part 6 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69789660b2187365e70bb94d",
+                "description": "69789660b2187365e70bb94d",
+                "type": "visit",
+                "count": 75,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.05
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 75,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 9100,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69789660b2187365e70bb94a name": "Hold the Lead [PVE ZONE]",
+                "69789660b2187365e70bb94d": "Eliminate 75 enemies in Arena"
+            },
+            "zh": {
+                "69789660b2187365e70bb94a name": "保持领先（PVE）",
+                "69789660b2187365e70bb94d": "在竞技场任意模式击杀 75 名敌人"
+            }
+        }
+    },
+    "69ce1de03e15cd80bd06f6c9": {
+        "id": "69ce1de03e15cd80bd06f6c9",
+        "name": "Oil Change",
+        "trader": "54cb50c76803fa8b248b4571",
+        "location_id": "69af492a4819ea4ba10a69c5",
+        "locationName": "Icebreaker",
+        "minPlayerLevel": 0,
+        "taskRequirements": [],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69ce1e2614b1a16885f61da4",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "699f09de81a6c812900a77b7",
+                "item_name": " AMG-10 hydraulic fluid",
+                "count": 5,
+                "item": "699f09de81a6c812900a77b7",
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": true
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "5449016a4bdc2d6f028b456f",
+                    "item_name": "Roubles",
+                    "count": 330000,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [
+                {
+                    "id": "69ce1de03e15cd80bd06f6c9-707265736574000000000021",
+                    "trader_id": "54cb50c76803fa8b248b4571",
+                    "trader_name": "Prapor",
+                    "level": 1,
+                    "item": "707265736574000000000021",
+                    "item_name": "Kalashnikov AK-308 7.62x51 assault rifle RMR",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": [],
+                    "base_item_id": "689166b6c2d6fa42e7044756"
+                }
+            ],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 32000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69ce1e2614b1a16885f61da4": "Find the item in raid: AMG-10 hydraulic fluid"
+            },
+            "zh": {
+                "69ce1de03e15cd80bd06f6c9 name": "油料交换",
+                "69ce1e2614b1a16885f61da4": "在战局中找到物品：AMG-10 液压油"
+            }
+        }
+    },
+    "69ce204c8702b378f9091e4b": {
+        "id": "69ce204c8702b378f9091e4b",
+        "name": "War Never Changes",
+        "trader": "54cb57776803fa99248b456e",
+        "location_id": "69af492a4819ea4ba10a69c5",
+        "locationName": "Icebreaker",
+        "minPlayerLevel": 0,
+        "taskRequirements": [],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69ce204c8702b378f9091e4d",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "69bb43df99f3fda8f1072483",
+                "item_name": "Nooby Shield potassium iodide tablets",
+                "count": 10,
+                "item": "69bb43df99f3fda8f1072483",
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": true
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "637b620db7afa97bfc3d7009",
+                    "item_name": "Trimadol stimulant injector",
+                    "count": 5,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "5d02797c86f774203f38e30a",
+                    "item_name": "Surv12 field surgical kit",
+                    "count": 2,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "5449016a4bdc2d6f028b456f",
+                    "item_name": "Roubles",
+                    "count": 250000,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 27000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69ce204c8702b378f9091e4d": "Find the item in raid: Nooby Shield potassium iodide tablets"
+            },
+            "zh": {
+                "69ce204c8702b378f9091e4b name": "战争从未改变",
+                "69ce204c8702b378f9091e4d": "在战局中找到物品：Nooby Shield 碘化钾片"
+            }
+        }
+    },
+    "69ce21e990144e437802b1e0": {
+        "id": "69ce21e990144e437802b1e0",
+        "name": "Fresh Stock",
+        "trader": "5ac3b934156ae10c4430e83c",
+        "location_id": "69af492a4819ea4ba10a69c5",
+        "locationName": "Icebreaker",
+        "minPlayerLevel": 0,
+        "taskRequirements": [],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69ce21e990144e437802b1e2",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "item_id": "689479cb47e5acd1e10be986",
+                "item_name": "Ferro Concepts FCPC V5 Plate Carrier (Black Division)",
+				"count": 5,
+                "item": "689479cb47e5acd1e10be986",
+                "items": [
+                    "689479cb47e5acd1e10be986",
+					"689479eb30cc5ba7be00f5ff"
+                ],
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": true,
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "5449016a4bdc2d6f028b456f",
+                    "item_name": "Roubles",
+                    "count": 300000,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [
+                {
+                    "id": "5f60c74e3b85f6263c145586-5ac3b934156ae10c4430e83c",
+                    "trader_id": "5ac3b934156ae10c4430e83c",
+                    "trader_name": "Ragman",
+                    "level": 1,
+                    "item": "5f60c74e3b85f6263c145586",
+                    "item_name": "Rys-T bulletproof helmet (Black)",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": [],
+                    "base_item_id": null
+                }
+            ],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 25000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69ce21e990144e437802b1e2": "Find the item in raid: Black Division plate carrier"
+            },
+            "zh": {
+                "69ce21e990144e437802b1e0 name": "新鲜到货",
+                "69ce21e990144e437802b1e2": "在战局中找到物品：黑色军团插板胸挂"
+            }
+        }
+    },
+    "69ce1cfb298a6529b30d712b": {
+        "id": "69ce1cfb298a6529b30d712b",
+        "name": "A Wedge Between Us",
+        "trader": "5c0647fdd443bc2504c2d371",
+        "location_id": "69af492a4819ea4ba10a69c5",
+        "locationName": "Icebreaker",
+        "minPlayerLevel": 0,
+        "taskRequirements": [],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69ce1cfb298a6529b30d712d",
+                "type": "shoot",
+                "optional": false,
+                "locationNames": [
+                    "Icebreaker"
+                ],
+                "map_ids": [
+                    "69af492a4819ea4ba10a69c5"
+                ],
+                "target": "bossWedge",
+                "count": 4,
+                "shotType": "kill",
+                "usingWeapon": [],
+                "usingWeaponMods": [],
+                "zoneNames": [],
+                "distance": null,
+                "wearing": [],
+                "notWearing": [],
+                "healthEffect": null,
+                "enemyHealthEffect": null,
+                "playerHealthEffect": null
+            },
+            {
+                "id": "6a03343990ee160507db2294",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "69e2441a18cb3157560855ec",
+                "item_name": "Spiritus Systems LV-119 Plate Carrier (MultiCam Black)",
+                "count": 1,
+                "item": "69e2441a18cb3157560855ec",
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "62973e474bb5ab23071c2a70",
+                    "item_name": "Accuracy International AXMC .338 LM bolt-action sniper rifle",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "657023ccbfc87b3a3409320a",
+                    "item_name": ".338 Lapua Magnum FMJ ammo pack (20 pcs)",
+                    "count": 3,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "628120fd5631d45211793c9f",
+                    "item_name": "AI AXMC .338 LM 10-round magazine",
+                    "count": 3,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "5449016a4bdc2d6f028b456f",
+                    "item_name": "Roubles",
+                    "count": 450000,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 52000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69ce1cfb298a6529b30d712d": "Locate and neutralize The Wedge's squad",
+                "6a03343990ee160507db2294": "Claim a trophy from The Wedge"
+            },
+            "zh": {
+                "69ce1cfb298a6529b30d712b name": "如楔在侧",
+                "69ce1cfb298a6529b30d712d": "找到并消灭 Wedge 小队",
+                "6a03343990ee160507db2294": "从 Wedge 身上取得战利品"
+            }
+        }
+    },
+    "69ce213a298a6529b30d7134": {
+        "id": "69ce213a298a6529b30d7134",
+        "name": "Biochemistry",
+        "trader": "54cb57776803fa99248b456e",
+        "location_id": "69af492a4819ea4ba10a69c5",
+        "locationName": "Icebreaker",
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "69ce204c8702b378f9091e4b",
+                "name": "War Never Changes",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69ce213a298a6529b30d7136",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "69bb435ff609db77390b0e25",
+                "item_name": "Aceso Xpress semi-automatic biochemical analyzer",
+                "count": 3,
+                "item": "69bb435ff609db77390b0e25",
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": true
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "5449016a4bdc2d6f028b456f",
+                    "item_name": "Roubles",
+                    "count": 360000,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [
+                {
+                    "id": "59fb016586f7746d0d4b423a-54cb57776803fa99248b456e",
+                    "trader_id": "54cb57776803fa99248b456e",
+                    "trader_name": "PrTherapistapor",
+                    "level": 1,
+                    "item": "59fb016586f7746d0d4b423a",
+                    "item_name": "Money case",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": [],
+                    "base_item_id": null
+                }
+            ],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 32000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69ce213a298a6529b30d7136": "Find the item in raid: Aceso Xpress semi-automatic biochemical analyzer"
+            },
+            "zh": {
+                "69ce213a298a6529b30d7134 name": "生化分析",
+                "69ce213a298a6529b30d7136": "在战局中找到物品：Aceso Xpress 半自动生化分析仪"
+            }
+        }
+    },
+    "69ce1f84ebbdbf36a200627c": {
+        "id": "69ce1f84ebbdbf36a200627c",
+        "name": "Peaceful Atom",
+        "trader": "5935c25fb3acc3127c3d8cd9",
+        "location_id": "69af492a4819ea4ba10a69c5",
+        "locationName": "Icebreaker",
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "69ce1de03e15cd80bd06f6c9",
+                "name": "Oil Change",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69ce1f84ebbdbf36a200627e",
+                "type": "findQuestItem",
+                "optional": false,
+                "locationNames": [
+                    "Icebreaker"
+                ],
+                "map_ids": [
+                    "69af492a4819ea4ba10a69c5"
+                ],
+                "item_id": "69bb42b9ce2b96840302b92b",
+                "item_name": "Nuclear power unit control log",
+                "count": 1
+            },
+            {
+                "id": "69ce1f84ebbdbf36a200627f",
+                "type": "giveQuestItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "69bb42b9ce2b96840302b92b",
+                "item_name": "Nuclear power unit control log",
+                "count": 1
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "6193e590069d61205d490dd8",
+                    "item_name": "HK G28 7.62x51 marksman rifle",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "6769b8e3c1a1466c850658a8",
+                    "item_name": "7.62x51mm M80A1 ammo pack (20 pcs)",
+                    "count": 5,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "617131a4568c120fdd29482d",
+                    "item_name": "HK417/G28 7.62x51 20-round magazine",
+                    "count": 3,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "5696686a4bdc2da3298b456a",
+                    "item_name": "Dollars",
+                    "count": 3600,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 24000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69ce1f84ebbdbf36a200627e": "Locate and obtain the nuclear power unit control log on Icebreaker",
+                "69ce1f84ebbdbf36a200627f": "Hand over the found item"
+            },
+            "zh": {
+                "69ce1f84ebbdbf36a200627c name": "和平原子",
+                "69ce1f84ebbdbf36a200627e": "在破冰船上找到并获取核反应单元控制日志",
+                "69ce1f84ebbdbf36a200627f": "上交找到的物品"
+            }
+        }
+    },
+    "69e5583240c3e6c8ba0edbd5": {
+        "id": "69e5583240c3e6c8ba0edbd5",
+        "name": "Wiring the Vessel",
+        "trader": "5935c25fb3acc3127c3d8cd9",
+        "location_id": "69af492a4819ea4ba10a69c5",
+        "locationName": "Icebreaker",
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "69ce1f84ebbdbf36a200627c",
+                "name": "Peaceful Atom",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69e5593e3f425636f1d762d9",
+                "type": "plantItem",
+                "optional": false,
+                "locationNames": [
+                    "Icebreaker"
+                ],
+                "map_ids": [
+                    "69af492a4819ea4ba10a69c5"
+                ],
+                "item": "590c2e1186f77425357b6124",
+                "item_name": "Toolset",
+                "count": 1,
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false
+            },
+            {
+                "id": "69e5594c6dd4d9e12fa3de0d",
+                "type": "plantItem",
+                "optional": false,
+                "locationNames": [
+                    "Icebreaker"
+                ],
+                "map_ids": [
+                    "69af492a4819ea4ba10a69c5"
+                ],
+                "item": "590c2e1186f77425357b6124",
+                "item_name": "Toolset",
+                "count": 1,
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false
+            },
+            {
+                "id": "69e559525afcf4e746e98e33",
+                "type": "plantItem",
+                "optional": false,
+                "locationNames": [
+                    "Icebreaker"
+                ],
+                "map_ids": [
+                    "69af492a4819ea4ba10a69c5"
+                ],
+                "item": "590c2e1186f77425357b6124",
+                "item_name": "Toolset",
+                "count": 1,
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false
+            },
+            {
+                "id": "69e559bf4b53b554a2779130",
+                "type": "plantItem",
+                "optional": false,
+                "locationNames": [
+                    "Icebreaker"
+                ],
+                "map_ids": [
+                    "69af492a4819ea4ba10a69c5"
+                ],
+                "item": "68e63a53371639e1e4004b6e",
+                "item_name": "Local network hacking device",
+                "count": 1,
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "68e63a53371639e1e4004b6e",
+                    "item_name": "Local network hacking device",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "5696686a4bdc2da3298b456a",
+                    "item_name": "Dollars",
+                    "count": 5400,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [
+                {
+                    "id": "5d235bb686f77443f4331278-5935c25fb3acc3127c3d8cd9",
+                    "trader_id": "5935c25fb3acc3127c3d8cd9",
+                    "trader_name": "Peacekeeper",
+                    "level": 1,
+                    "item": "5d235bb686f77443f4331278",
+                    "item_name": "S I C C organizational pouch",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": [],
+                    "base_item_id": null
+                }
+            ],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 30000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69e5593e3f425636f1d762d9": "Repair the equipment in the automation room leading to the engine room on Icebreaker",
+                "69e5594c6dd4d9e12fa3de0d": "Repair the equipment in the automation room under the engine room on Icebreaker",
+                "69e559525afcf4e746e98e33": "Repair the equipment in the automation room near the storage room on Icebreaker",
+                "69e559bf4b53b554a2779130": "Install the hacking device in the central control station room on Icebreaker"
+            },
+            "zh": {
+                "69e5583240c3e6c8ba0edbd5 name": "窃听风暴",
+                "69e5593e3f425636f1d762d9": "修复破冰船通往轮机舱路上自动化控制室内的设备",
+                "69e5594c6dd4d9e12fa3de0d": "修复破冰船轮机舱下方自动化控制室内的设备",
+                "69e559525afcf4e746e98e33": "修复破冰船靠近货舱位置自动化控制室内的设备",
+                "69e559bf4b53b554a2779130": "在破冰船主控室内安放黑客入侵装置"
+            }
+        }
+    },
+    "69c26c07683c9831020018c7": {
+        "id": "69c26c07683c9831020018c7",
+        "name": "Stick to It",
+        "trader": "656f0f98d80a697f855d34b1",
+        "location_id": null,
+        "locationName": "any",
+        "minPlayerLevel": 0,
+        "taskRequirements": [],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69c26dfeaa4283497aab0d36",
+                "type": "shoot",
+                "optional": false,
+                "locationNames": [
+                    "Lighthouse",
+                    "Icebreaker"
+                ],
+                "map_ids": [
+                    "5704e4dad2720bb55b8b4567",
+                    "69af492a4819ea4ba10a69c5"
+                ],
+                "target": "Rogues",
+                "count": 30,
+                "shotType": "kill",
+                "usingWeapon": [],
+                "usingWeaponMods": [],
+                "zoneNames": [],
+                "distance": null,
+                "wearing": [],
+                "notWearing": [],
+                "healthEffect": null,
+                "enemyHealthEffect": null,
+                "playerHealthEffect": null
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "5d1b385e86f774252167b98a",
+                    "item_name": "Water filter",
+                    "count": 3,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "5449016a4bdc2d6f028b456f",
+                    "item_name": "Roubles",
+                    "count": 100000,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 25000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69c26dfeaa4283497aab0d36": "Eliminate Rogues"
+            },
+            "zh": {
+                "69c26c07683c9831020018c7 name": "坚持到底",
+                "69c26dfeaa4283497aab0d36": "消灭游荡者"
+            }
+        }
+    },
+    "69c27158e350f01390049e77": {
+        "id": "69c27158e350f01390049e77",
+        "name": "Saving Private Roman",
+        "trader": "656f0f98d80a697f855d34b1",
+        "location_id": null,
+        "locationName": "any",
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "69c26c07683c9831020018c7",
+                "name": "Stick to It",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69c2740bdbeade0b8e55eeea",
+                "type": "mark",
+                "count": 1,
+                "optional": false,
+                "locationNames": [
+                    "Woods"
+                ],
+                "map_ids": [
+                    "5704e3c2d2720bac5b8b4567"
+                ],
+                "zoneNames": [],
+                "item": "5991b51486f77447b112d44f",
+                "item_id": "5991b51486f77447b112d44f",
+                "item_name": "MS2000 Marker"
+            },
+            {
+                "id": "69c27425f79e528d73ed4b2e",
+                "type": "visit",
+                "optional": false,
+                "locationNames": [
+                    "Lighthouse"
+                ],
+                "map_ids": [
+                    "5704e4dad2720bb55b8b4567"
+                ]
+            },
+            {
+                "id": "69c2745137b8de0e367891c6",
+                "type": "mark",
+                "count": 1,
+                "optional": false,
+                "locationNames": [
+                    "Lighthouse"
+                ],
+                "map_ids": [
+                    "5704e4dad2720bb55b8b4567"
+                ],
+                "zoneNames": [],
+                "item": "5991b51486f77447b112d44f",
+                "item_id": "5991b51486f77447b112d44f",
+                "item_name": "MS2000 Marker"
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 42000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69c2740bdbeade0b8e55eeea": "Mark the transit to Lighthouse with an MS2000 Marker on Woods",
+                "69c27425f79e528d73ed4b2e": "Use the transit from Woods to Lighthouse",
+                "69c2745137b8de0e367891c6": "Mark the transit to Woods with an MS2000 Marker on Lighthouse"
+            },
+            "zh": {
+                "69c27158e350f01390049e77 name": "拯救大兵罗曼",
+                "69c2740bdbeade0b8e55eeea": "在森林使用 MS2000 指示器标记前往灯塔的转移点",
+                "69c27425f79e528d73ed4b2e": "使用转移功能从森林转移到灯塔",
+                "69c2745137b8de0e367891c6": "在灯塔使用 MS2000 指示器标记前往森林的转移点"
+            }
+        }
+    },
+    "69c277f3ea6da9c23e07f8d2": {
+        "id": "69c277f3ea6da9c23e07f8d2",
+        "name": "A Bitter Victory",
+        "trader": "656f0f98d80a697f855d34b1",
+        "location_id": null,
+        "locationName": "any",
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "69c27158e350f01390049e77",
+                "name": "Saving Private Roman",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69c27887c921a0bbeb1889f5",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "5d1b376e86f774252519444e",
+                "item_name": "Bottle of Fierce Hatchling moonshine",
+                "count": 2,
+                "item": "5d1b376e86f774252519444e",
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false
+            },
+            {
+                "id": "69c27909f96f171f6982c4c7",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "item_id": "57347d3d245977448f7b7f61",
+                "item_name": "Rye croutons",
+				"count": 4,
+                "item": "57347d3d245977448f7b7f61",
+                "items": [
+                    "57347d3d245977448f7b7f61",
+					"5751487e245977207e26a315"
+                ],
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false,
+                "zones": []
+            },
+            {
+                "id": "69c278fff569bda0e2652705",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "5d40407c86f774318526545a",
+                "item_name": "Bottle of Tarkovskaya vodka",
+                "count": 4,
+                "item": "5d40407c86f774318526545a",
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false
+            },
+            {
+                "id": "69c278f14dc0363079d5bb40",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "635a758bfefc88a93f021b8a",
+                "item_name": "Salty Dog beef sausage",
+                "count": 2,
+                "item": "635a758bfefc88a93f021b8a",
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false
+            },
+            {
+                "id": "6a102713a973fbe02db53bf1",
+                "type": "extract",
+                "count": 1,
+                "optional": false,
+                "locationNames": [
+                    "Woods",
+                    "Streets of Tarkov"
+                ],
+                "map_ids": [
+                    "5704e3c2d2720bac5b8b4567",
+                    "5714dc692459777137212e12"
+                ],
+                "zoneNames": [],
+                "exitStatus": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [], 
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 30000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69c27887c921a0bbeb1889f5": "Hand over the item: Bottle of Fierce Hatchling moonshine",
+                "69c27909f96f171f6982c4c7": "Hand over the item: Rye croutons",
+                "69c278fff569bda0e2652705": "Hand over the item: Bottle of Tarkovskaya vodka",
+                "69c278f14dc0363079d5bb40": "Hand over the item: Salty Dog beef sausage",
+                "69c294f2bffe2159a3e4d56a": "Talk to the BTR Driver",
+                "6a102713a973fbe02db53bf1": "Survive and extract from the location"
+            },
+            "zh": {
+                "69c277f3ea6da9c23e07f8d2 name": "苦涩的胜利",
+                "69c27887c921a0bbeb1889f5": "获得物品：“凶狠跑刀崽”私酒",
+                "69c27909f96f171f6982c4c7": "上交物品：黑麦面包块",
+                "69c278fff569bda0e2652705": "上交物品：Tarkovskaya瓶装伏特加",
+                "69c278f14dc0363079d5bb40": "上交物品：咸狗牛肉肠",
+                "69c294f2bffe2159a3e4d56a": "与 BTR 司机对话",
+                "6a102713a973fbe02db53bf1": "以幸存状态撤离该区域"
+            }
+        }
+    },
+    "69c2a2d004de49c8f0055a3d": {
+        "id": "69c2a2d004de49c8f0055a3d",
+        "name": "Hangover",
+        "trader": "656f0f98d80a697f855d34b1",
+        "location_id": null,
+        "locationName": "any",
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "69c277f3ea6da9c23e07f8d2",
+                "name": "A Bitter Victory",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "69c2a5ba8d7f2db5aff26bd2",
+                "type": "visit",
+                "optional": false,
+                "locationNames": [
+                    "Woods",
+                    "Streets of Tarkov"
+                ],
+                "map_ids": [
+                    "5704e3c2d2720bac5b8b4567",
+                    "5714dc692459777137212e12"
+                ]
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 60000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "69c2a5ba8d7f2db5aff26bd2": "Return to the BTR Driver and ask about the negotiations with the smugglers"
+            },
+            "zh": {
+                "69c2a2d004de49c8f0055a3d name": "宿醉",
+                "69c2a5ba8d7f2db5aff26bd2": "返回 BTR 司机处，了解司机和走私者的谈判情况"
+            }
+        }
+    },
+    "68341eb25619c8e2a9031501": {
+        "id": "68341eb25619c8e2a9031501",
+        "name": "To Great Heights! - Part 1 [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "6978907718bd6d7cbd0e8b8e",
+                "name": "Professional Fitness - Part 2 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "68341eb25619c8e2a9031504",
+                "description": "68341eb25619c8e2a9031504",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.02
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 55,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 2800,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "68341eb25619c8e2a9031501 name": "To Great Heights! - Part 1 [PVE ZONE]",
+                "68341eb25619c8e2a9031504": "Win a match in CheckPoint or LastHero mode in Arena"
+            },
+            "zh": {
+                "68341eb25619c8e2a9031501 name": "再创新高！- 1（PVE）",
+                "68341eb25619c8e2a9031504": "在竞技场 CheckPoint 或 LastHero 模式下赢得一场战斗"
+            }
+        }
+    },
+    "68341f6fe2e7ef70a3060a0a": {
+        "id": "68341f6fe2e7ef70a3060a0a",
+        "name": "To Great Heights! - Part 2 [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "68341eb25619c8e2a9031501",
+                "name": "To Great Heights! - Part 1 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "68341f6fe2e7ef70a3060a0d",
+                "description": "68341f6fe2e7ef70a3060a0d",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.02
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 32,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "66572b3f6a723f7f005a066c",
+                    "item_name": "Locked weapon crate (Rare)",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 3500,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "68341f6fe2e7ef70a3060a0a name": "To Great Heights! - Part 2 [PVE ZONE]",
+                "68341f6fe2e7ef70a3060a0d": "Win a match in TeamFight, BlastGang, or CheckPoint mode in Arena"
+            },
+            "zh": {
+                "68341f6fe2e7ef70a3060a0a name": "再创新高！- 2（PVE）",
+                "68341f6fe2e7ef70a3060a0d": "在竞技场赢得一场 TeamFight 或 BlastGang 或 CheckPoint 模式的战斗"
+            }
+        }
+    },
+    "6834202a186efa3c5b07f9a2": {
+        "id": "6834202a186efa3c5b07f9a2",
+        "name": "To Great Heights! - Part 3 [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "68341f6fe2e7ef70a3060a0a",
+                "name": "To Great Heights! - Part 2 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "68341f6fe2e7ef70a3060a0d",
+                "description": "68341f6fe2e7ef70a3060a0d",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.03
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 28,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "66572bb3ac60f009f270d1df",
+                    "item_name": "Locked valuables crate (Rare)",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 4500,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "6834202a186efa3c5b07f9a2 name": "To Great Heights! - Part 3 [PVE ZONE]",
+                "6834202a186efa3c5b07f9a5": "Win 2 matches while claiming at least 3rd place in TeamFight, BlastGang, or CheckPoint mode in Arena"
+            },
+            "zh": {
+                "6834202a186efa3c5b07f9a2 name": "再创新高！- 3（PVE）",
+                "6834202a186efa3c5b07f9a5": "在竞技场赢得两场 TeamFight 或 BlastGang 或 CheckPoint 模式的战斗，至少取得前三名的排名"
+            }
+        }
+    },
+    "683421515619c8e2a9031511": {
+        "id": "683421515619c8e2a9031511",
+        "name": "To Great Heights! - Part 4 [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "6834202a186efa3c5b07f9a2",
+                "name": "To Great Heights! - Part 3 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "683421515619c8e2a9031514",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "item_id": "5449016a4bdc2d6f028b456f",
+                "item_name": "Roubles",
+				"count": 1000000,
+                "item": "5449016a4bdc2d6f028b456f",
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false,
+                "zones": []
+            },
+            {
+                "id": "683421515619c8e2a9031515",
+                "description": "683421515619c8e2a9031515",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.05
+                }
+            ],
+            "items": [
+                {
+                    "item": "5449016a4bdc2d6f028b456f",
+                    "item_name": "Roubles",
+                    "count": 2500000,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 28,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "665732f4464c4b4ba4670fa9",
+                    "item_name": "Unlocked supply crate (Rare)",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [
+            {
+                "id": "683421515619c8e2a9031518",
+                "description": "683421515619c8e2a9031518",
+                "type": "visit",
+                "count": null,
+                "optional": true,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "restartable": false,
+        "experience": 5600,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "683421515619c8e2a9031511 name": "To Great Heights! - Part 4 [PVE ZONE]",
+                "683421515619c8e2a9031514": "Hand over Roubles",
+                "683421515619c8e2a9031515": "Win three out of six matches in TeamFight, BlastGang, or CheckPoint mode in Arena",
+                "683421515619c8e2a9031518": "Failure Condition: Lose 4 matches"
+            },
+            "zh": {
+                "683421515619c8e2a9031511 name": "再创新高！- 4（PVE）",
+                "683421515619c8e2a9031514": "上交卢布",
+                "683421515619c8e2a9031515": "在竞技场进行六场 TeamFight 或 BlastGang 或 CheckPoint 模式的战斗，至少赢得其中三场",
+                "683421515619c8e2a9031518": "失败条件：在 4 场比赛中落败"
+            }
+        }
+    },
+    "68342265a8d674b5740b31f0": {
+        "id": "68342265a8d674b5740b31f0",
+        "name": "To Great Heights! - Part 5 [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "683421515619c8e2a9031511",
+                "name": "To Great Heights! - Part 4 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "68342265a8d674b5740b31f3",
+                "description": "68342265a8d674b5740b31f3",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.04
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 40,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 6900,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "68342265a8d674b5740b31f0 name": "To Great Heights! - Part 5 [PVE ZONE]",
+                "68342265a8d674b5740b31f3": "Win two matches in a row in TeamFight, BlastGang, or CheckPoint mode in Arena"
+            },
+            "zh": {
+                "68342265a8d674b5740b31f0 name": "再创新高！- 5（PVE）",
+                "68342265a8d674b5740b31f3": "在竞技场连续赢得两场 TeamFight 或 BlastGang 或 CheckPoint 模式的战斗"
+            }
+        }
+    },
+    "6834233fecd5cf3a440d855b": {
+        "id": "6834233fecd5cf3a440d855b",
+        "name": "Against the Conscience - Part 1 [PVE ZONE]",
+        "trader": "579dc571d53a0658a154fbec",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "68341c4babec72d95d0c1260",
+                "name": "Create a Distraction - Part 1 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            },
+            {
+                "task": "69789660b2187365e70bb94a",
+                "name": "Hold the Lead[PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "6834233fecd5cf3a440d855f",
+                "description": "6834233fecd5cf3a440d855f",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [
+                    "Customs"
+                ],
+                "map_ids": [
+                    "56f40101d2720b2a4d8b45d6"
+                ],
+                "zoneNames": [],
+                "zones": []
+            },
+            {
+                "id": "6834233fecd5cf3a440d8561",
+                "description": "6834233fecd5cf3a440d8561",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [
+                    "Customs"
+                ],
+                "map_ids": [
+                    "56f40101d2720b2a4d8b45d6"
+                ],
+                "zoneNames": [],
+                "zones": []
+            },
+            {
+                "id": "6834233fecd5cf3a440d8564",
+                "type": "extract",
+                "count": 1,
+                "optional": false,
+                "locationNames": [
+                    "Customs"
+                ],
+                "map_ids": [
+                    "56f40101d2720b2a4d8b45d6"
+                ],
+                "zoneNames": [],
+                "exitStatus": [
+                    "Survived"
+                ],
+                "zones": []
+            },
+            {
+                "id": "6834233fecd5cf3a440d8567",
+                "description": "6834233fecd5cf3a440d8567",
+                "type": "visit",
+                "count": null,
+                "optional": true,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [],
+            "items": [
+                {
+                    "item": "657194c0289dc422160e08d1",
+                    "item_name": "CQC Osprey MK4A plate carrier (Assault, MTP) Default",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "5c0d1e9386f77440120288b7",
+                    "item_name": "HK 416A5 5.56x45 assault rifle Default",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "5c05413a0db834001c390617",
+                    "item_name": "AR-15 5.56x45 HK Steel Maritime STANAG 30-round magazine",
+                    "count": 3,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "657024f9bfc87b3a3409323b",
+                    "item_name": "5.56x45mm MK 318 Mod 0 (SOST) ammo pack (50 pcs)",
+                    "count": 3,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "664a5480bfcc521bad3192ca",
+                    "item_name": "Armband (ARENA)",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 11700,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "6834233fecd5cf3a440d855b name": "Against the Conscience - Part 1 [PVE ZONE]",
+                "6834233fecd5cf3a440d855f": "Locate the old champion's room on Customs",
+                "6834233fecd5cf3a440d8561": "Find out what happened to the champion",
+                "6834233fecd5cf3a440d8564": "Survive and extract from the location",
+                "6834233fecd5cf3a440d856": "Locate and obtain the key at the smugglers' base on Shoreline"
+            },
+            "zh": {
+                "6834233fecd5cf3a440d855b name": "良心作祟 - 1（PVE）",
+                "6834233fecd5cf3a440d855f": "在海关找到前冠军的房间",
+                "6834233fecd5cf3a440d8561": "调查前任冠军的遭遇",
+                "6834233fecd5cf3a440d8564": "以幸存状态撤离该区域",
+                "6834233fecd5cf3a440d856": "在海岸线的走私者营地找到并获取钥匙"
+            }
+        }
+    },
+    "68342446a8d674b5740b31fc": {
+        "id": "68342446a8d674b5740b31fc",
+        "name": "Against the Conscience - Part 2 [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "6834233fecd5cf3a440d855b",
+                "name": "Against the Conscience - Part 1 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "68342446a8d674b5740b31ff",
+                "description": "68342446a8d674b5740b31ff",
+                "type": "visit",
+                "count": 75,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.04
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 100,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": 23000,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "68342446a8d674b5740b31fc name": "Against the Conscience - Part 2 [PVE ZONE]",
+                "68342446a8d674b5740b31ff": "Eliminate enemies in any game mode in Arena"
+            },
+            "zh": {
+                "68342446a8d674b5740b31fc name": "良心作祟 - 2（PVE）",
+                "68342446a8d674b5740b31ff": "在竞技场任意游戏模式中消灭敌人"
+            }
+        }
+    },
+    "6834254f2f0e2a7eb90b62ef": {
+        "id": "6834254f2f0e2a7eb90b62ef",
+        "name": "Decisions, Decisions [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "68342446a8d674b5740b31fc",
+                "name": "Against the Conscience - Part 2 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "6834254f2f0e2a7eb90b62f1",
+                "type": "findQuestItem",
+                "optional": false,
+                "locationNames": [
+                    "Customs"
+                ],
+                "map_ids": [
+                    "56f40101d2720b2a4d8b45d6"
+                ],
+                "item_id": "664fce7a90294949fe2d81cb",
+                "item_name": "Ref dirt",
+                "count": 1
+            },
+            {
+                "id": "6834254f2f0e2a7eb90b62f2",
+                "type": "giveQuestItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "664fce7a90294949fe2d81cb",
+                "item_name": "Ref dirt",
+                "count": 1
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.15
+                }
+            ],
+            "items": [
+                {
+                    "item": "5d235b4d86f7742e017bc88a",
+                    "item_name": "GP Coin",
+                    "count": 72,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "664a55d84a90fc2c8a6305c9",
+                    "item_name": "Secure container Theta",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [
+                {
+                    "trader_id": "579dc571d53a0658a154fbec",
+                    "name": "Fence",
+                    "standing": 0.15
+                }
+            ],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [
+            {
+                "id": "6834254f2f0e2a7eb90b62ef-683425dd8f5b18d29a05d9d1",
+                "description": "6834254f2f0e2a7eb90b62ef-683425dd8f5b18d29a05d9d1",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "683425dd8f5b18d29a05d9d1",
+                "quest_name": "Between Two Fires [PVE ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            },
+            {
+                "id": "6834254f2f0e2a7eb90b62ef-683427418f5b18d29a05d9e3",
+                "description": "6834254f2f0e2a7eb90b62ef-683427418f5b18d29a05d9e3",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "683427418f5b18d29a05d9e3",
+                "quest_name": "Surprise Gift [PVE ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            }
+        ],
+        "restartable": false,
+        "experience": 18500,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "6834254f2f0e2a7eb90b62ef name": "Decisions, Decisions [PVE ZONE]",
+                "6834254f2f0e2a7eb90b62f1": "Locate and obtain the compromising information on Ref",
+                "6834254f2f0e2a7eb90b62f2": "Hand over the found info"
+            },
+            "zh": {
+                "6834254f2f0e2a7eb90b62ef name": "两难抉择（PVE）",
+                "6834254f2f0e2a7eb90b62f1": "找到并获取竞技场裁判的黑料",
+                "6834254f2f0e2a7eb90b62f2": "上交找到的信息"
+            }
+        }
+    },
+    "683425dd8f5b18d29a05d9d1": {
+        "id": "683425dd8f5b18d29a05d9d1",
+        "name": "Between Two Fires [PVE ZONE]",
+        "trader": "579dc571d53a0658a154fbec",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "68342446a8d674b5740b31fc",
+                "name": "Against the Conscience - Part 2 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "683425dd8f5b18d29a05d9d4",
+                "description": "683425dd8f5b18d29a05d9d4",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [
+                    "Customs"
+                ],
+                "map_ids": [
+                    "56f40101d2720b2a4d8b45d6"
+                ],
+                "zoneNames": [],
+                "zones": []
+            },
+            {
+                "id": "683425dd8f5b18d29a05d9d6",
+                "type": "findQuestItem",
+                "optional": false,
+                "locationNames": [
+                    "Customs"
+                ],
+                "map_ids": [
+                    "56f40101d2720b2a4d8b45d6"
+                ],
+                "item_id": "664fce7a90294949fe2d81cb",
+                "item_name": "Ref dirt",
+                "count": 1
+            },
+            {
+                "id": "683425dd8f5b18d29a05d9d8",
+                "type": "giveQuestItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "664fce7a90294949fe2d81cb",
+                "item_name": "Ref dirt",
+                "count": 1
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "579dc571d53a0658a154fbec",
+                    "name": "Fence",
+                    "standing": 0.2
+                }
+            ],
+            "items": [
+                {
+                    "item": "5449016a4bdc2d6f028b456f",
+                    "item_name": "Roubles",
+                    "count": 165000,
+                    "contains": [],
+                    "attributes": []
+                },
+                {
+                    "item": "664a55d84a90fc2c8a6305c9",
+                    "item_name": "Secure container Theta",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [
+            {
+                "id": "683425dd8f5b18d29a05d9d1-6834254f2f0e2a7eb90b62ef",
+                "description": "683425dd8f5b18d29a05d9d1-6834254f2f0e2a7eb90b62ef",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "6834254f2f0e2a7eb90b62ef",
+                "quest_name": "Decisions, Decisions [PVE ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            },
+            {
+                "id": "683425dd8f5b18d29a05d9d1-683427418f5b18d29a05d9e3",
+                "description": "683425dd8f5b18d29a05d9d1-683427418f5b18d29a05d9e3",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "683427418f5b18d29a05d9e3",
+                "quest_name": "Surprise Gift [PVE ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            }
+        ],
+        "restartable": false,
+        "experience": 18500,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "683425dd8f5b18d29a05d9d1 name": "Between Two Fires [PVE ZONE]",
+                "683425dd8f5b18d29a05d9d4": "Return to the old champion's hideout on Customs",
+                "683425dd8f5b18d29a05d9d6": "Locate and obtain the compromising information on Ref",
+                "683425dd8f5b18d29a05d9d8": "Hand over the found info"
+            },
+            "zh": {
+                "683425dd8f5b18d29a05d9d1 name": "两难抉择（PVE）",
+                "683425dd8f5b18d29a05d9d4": "返回海关的前冠军藏身处",
+                "683425dd8f5b18d29a05d9d6": "找到并获取竞技场裁判的黑料",
+                "683425dd8f5b18d29a05d9d8": "上交找到的信息"
+            }
+        }
+    },
+    "683427418f5b18d29a05d9e3": {
+        "id": "683427418f5b18d29a05d9e3",
+        "name": "Surprise Gift [PVE ZONE]",
+        "trader": "638f541a29ffd1183d187f57",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 35,
+        "taskRequirements": [
+            {
+                "task": "68342446a8d674b5740b31fc",
+                "name": "Against the Conscience - Part 2 [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "683427418f5b18d29a05d9e5",
+                "description": "683427418f5b18d29a05d9e5",
+                "type": "visit",
+                "count": null,
+                "optional": false,
+                "locationNames": [
+                    "Customs"
+                ],
+                "map_ids": [
+                    "56f40101d2720b2a4d8b45d6"
+                ],
+                "zoneNames": [],
+                "zones": []
+            },
+            {
+                "id": "683427418f5b18d29a05d9e7",
+                "type": "findQuestItem",
+                "optional": false,
+                "locationNames": [
+                    "Customs"
+                ],
+                "map_ids": [
+                    "56f40101d2720b2a4d8b45d6"
+                ],
+                "item_id": "664fce7a90294949fe2d81cb",
+                "item_name": "Ref dirt",
+                "count": 1
+            },
+            {
+                "id": "683427418f5b18d29a05d9e9",
+                "type": "giveQuestItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "item_id": "664fce7a90294949fe2d81cb",
+                "item_name": "Ref dirt",
+                "count": 1
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "638f541a29ffd1183d187f57",
+                    "name": "Lightkeeper",
+                    "standing": 0.01
+                }
+            ],
+            "items": [
+                {
+                    "item": "5696686a4bdc2da3298b456a",
+                    "item_name": "Dollars",
+                    "count": 1187,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [
+            {
+                "id": "683427418f5b18d29a05d9e3-6834254f2f0e2a7eb90b62ef",
+                "description": "683427418f5b18d29a05d9e3-6834254f2f0e2a7eb90b62ef",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "6834254f2f0e2a7eb90b62ef",
+                "quest_name": "Decisions, Decisions [PVE ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            },
+            {
+                "id": "683427418f5b18d29a05d9e3-683425dd8f5b18d29a05d9d1",
+                "description": "683427418f5b18d29a05d9e3-683425dd8f5b18d29a05d9d1",
+                "type": "taskStatus",
+                "count": null,
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "task": "683425dd8f5b18d29a05d9d1",
+                "quest_name": "Between Two Fires [PVE ZONE]",
+                "status": [
+                    "complete"
+                ],
+                "zones": []
+            }
+        ],
+        "restartable": false,
+        "experience": 25500,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "683427418f5b18d29a05d9e3 name": "Surprise Gift [PVE ZONE]",
+                "683427418f5b18d29a05d9e5": "Return to the old champion's hideout on Customs",
+                "683427418f5b18d29a05d9e7": "Locate and obtain the compromising information on Ref",
+                "683427418f5b18d29a05d9e9": "Hand over the found info"
+            },
+            "zh": {
+                "683427418f5b18d29a05d9e3 name": "两难抉择（PVE）",
+                "683427418f5b18d29a05d9e5": "返回海关的前冠军藏身处",
+                "683427418f5b18d29a05d9e7": "找到并获取竞技场裁判的黑料",
+                "683427418f5b18d29a05d9e9": "上交找到的信息"
+            }
+        }
+    },
+    "6834287b7559f4e6d50bc0fa": {
+        "id": "6834287b7559f4e6d50bc0fa",
+        "name": "Postponed Reward [PVE ZONE]",
+        "trader": "6617beeaa9cfa777ca915b7c",
+        "gameMode": ["pve"],
+        "location_id": null,
+        "locationName": null,
+        "minPlayerLevel": 0,
+        "taskRequirements": [
+            {
+                "task": "683427418f5b18d29a05d9e3",
+                "name": "Surprise Gift [PVE ZONE]",
+                "status": [
+                    "complete"
+                ]
+            }
+        ],
+        "traderRequirements": [],
+        "objectives": [
+            {
+                "id": "6834287b7559f4e6d50bc0fd",
+                "type": "giveItem",
+                "optional": false,
+                "locationNames": [],
+                "map_ids": [],
+                "zoneNames": [],
+                "item_id": "6656560053eaaa7a23349c86",
+                "item_name": "Lega Medal",
+				"count": 1,
+                "item": "6656560053eaaa7a23349c86",
+                "dogTagLevel": 0,
+                "maxDurability": 100,
+                "minDurability": 0,
+                "foundInRaid": false,
+                "zones": []
+            }
+        ],
+        "startRewards": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "finishRewards": {
+            "traderStanding": [
+                {
+                    "trader_id": "6617beeaa9cfa777ca915b7c",
+                    "name": "Ref",
+                    "standing": 0.01
+                }
+            ],
+            "items": [
+                {
+                    "item": "664a55d84a90fc2c8a6305c9",
+                    "item_name": "Secure container Theta",
+                    "count": 1,
+                    "contains": [],
+                    "attributes": []
+                }
+            ],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failureOutcome": {
+            "traderStanding": [],
+            "items": [],
+            "offerUnlock": [],
+            "skillLevelReward": [],
+            "traderUnlock": []
+        },
+        "failConditions": [],
+        "restartable": false,
+        "experience": null,
+        "tarkovDataId": null,
+        "factionName": "Any",
+        "locale": {
+            "en": {
+                "6834287b7559f4e6d50bc0fa name": "Postponed Reward [PVE ZONE]",
+                "6834287b7559f4e6d50bc0fd": "Hand over the item: Lega Medal"
+            },
+            "zh": {
+                "6834287b7559f4e6d50bc0fa name": "迟来的奖励（PVE）",
+                "6834287b7559f4e6d50bc0fd": "上交物品：传奇奖章"
+            },
+            "de": {
+                "6834287b7559f4e6d50bc0fa name": "Aufgeschobene Belohnung [PVE ZONE]",
+                "6834287b7559f4e6d50bc0fd": "Übergib den Gegenstand: Lega-Medaille"
             }
         }
     }
